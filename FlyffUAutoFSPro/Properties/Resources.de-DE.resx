@@ -1,0 +1,507 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="mystatus" xml:space="preserve">
+    <value>Mein Status</value>
+  </data>
+  <data name="skills" xml:space="preserve">
+    <value>Skills</value>
+  </data>
+  <data name="rebuff" xml:space="preserve">
+    <value>Rebuff</value>
+  </data>
+  <data name="start" xml:space="preserve">
+    <value>START</value>
+  </data>
+  <data name="stop" xml:space="preserve">
+    <value>STOP</value>
+  </data>
+  <data name="selectedplayer" xml:space="preserve">
+    <value>Selektierter Spieler</value>
+  </data>
+  <data name="hppotion" xml:space="preserve">
+    <value>HP Trank:</value>
+  </data>
+  <data name="fppotion" xml:space="preserve">
+    <value>FP Trank:</value>
+  </data>
+  <data name="mppotion" xml:space="preserve">
+    <value>MP Trank:</value>
+  </data>
+  <data name="disabled" xml:space="preserve">
+    <value>Nicht Aktiv</value>
+  </data>
+  <data name="status" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="selfhealprotection" xml:space="preserve">
+    <value>Selbstheilung</value>
+  </data>
+  <data name="selfhealprotection_tooltipp" xml:space="preserve">
+    <value>Wenn die eigenen HP unter dem definiertem Wert fallen dann wird der selektierte Spieler deselektiert (ESC) und die Selbstheilung wird gestartet. Nützlich wenn noch schnellere Heilung benötigt wird um Angriffe von Aggro-Monster zu überleben. Wird Heal Rain genutzt so wird der Spieler nicht deselektiert .</value>
+  </data>
+  <data name="hppotion_tooltip" xml:space="preserve">
+    <value>Hotkey für Nahrung und andere Items um die HP wiederherzustellen.</value>
+  </data>
+  <data name="fppotion_tooltip" xml:space="preserve">
+    <value>Hotkey für Tränke und andere Items um die FP wiederherzustellen.</value>
+  </data>
+  <data name="mppotion_tooltip" xml:space="preserve">
+    <value>Hotkey für Tränke und andere Items um die MP wiederherzustellen.</value>
+  </data>
+  <data name="selfhealprotection_value_tooltip" xml:space="preserve">
+    <value>Unterschreitet die eigene HP diesen Wert so wird die selbst Heilung aktiviert. </value>
+  </data>
+  <data name="hotkeys" xml:space="preserve">
+    <value>Hotkeys</value>
+  </data>
+  <data name="settings" xml:space="preserve">
+    <value>Einstellungen</value>
+  </data>
+  <data name="statusT" xml:space="preserve">
+    <value>Status (T)</value>
+  </data>
+  <data name="followZ" xml:space="preserve">
+    <value>Ziel folgen (Z)</value>
+  </data>
+  <data name="statusT_tooltip" xml:space="preserve">
+    <value>Hotkey um das Statusfenster zu öffnen. Standardmäßig ist es der Buchstabe T.</value>
+  </data>
+  <data name="followZ_tooltip" xml:space="preserve">
+    <value>Hotkey um einen Ziel zu folgen. Standardmäßig ist es der Buchstabe Z.</value>
+  </data>
+  <data name="gtautorebuff" xml:space="preserve">
+    <value>GT Autorebuff</value>
+  </data>
+  <data name="gtautorebuff_tooltipp" xml:space="preserve">
+    <value>Mit dieser Einstellung wird der Buff Geburah Tiphreth (GT) automatisch nach der angegebenen Zeit neu gebufft.</value>
+  </data>
+  <data name="gtautorebuff_value_tooltip" xml:space="preserve">
+    <value>GT wird nach den angegebenen Sekunden automatisch neu gebufft. </value>
+  </data>
+  <data name="rebuffgt" xml:space="preserve">
+    <value>Rebuff GT</value>
+  </data>
+  <data name="info" xml:space="preserve">
+    <value>Info</value>
+  </data>
+  <data name="hotkeyalreadyinuse" xml:space="preserve">
+    <value>Hotkey ist bereits in der Benutzung und kann nicht nochmal verwendet werden.</value>
+  </data>
+  <data name="normalhealing" xml:space="preserve">
+    <value>Normale Heilung</value>
+  </data>
+  <data name="criticalhealing" xml:space="preserve">
+    <value>Kritische Heilung</value>
+  </data>
+  <data name="healing" xml:space="preserve">
+    <value>Heilung</value>
+  </data>
+  <data name="normalhealing_tooltip" xml:space="preserve">
+    <value>Fällt die HP des selektierten Spielers unter den angegebenen Wert so wird eine einmalige Heilung durchgeführt.</value>
+  </data>
+  <data name="criticalhealing_tooltip" xml:space="preserve">
+    <value>Fällt die HP des selektierten Spielers unter den angegebenen Wert so wird eine kritische Heilung durchgeführt. Heilung wird mehrere Sekunden ohne Pause durchgeführt.</value>
+  </data>
+  <data name="criticalhealing_not_bigger_than_normal" xml:space="preserve">
+    <value>Kritischer Heilungswert kann nicht größer wie der normale Heilungswert sein.</value>
+  </data>
+  <data name="normalhealing_not_smaller_than_critical" xml:space="preserve">
+    <value>Normaler Heilungswert kann nicht kleiner wie der kritische Heilungswert sein.</value>
+  </data>
+  <data name="usehppotion" xml:space="preserve">
+    <value>HP Trank benutzen ab:</value>
+  </data>
+  <data name="usemppotion" xml:space="preserve">
+    <value>MP Trank benutzen ab:</value>
+  </data>
+  <data name="usemppotion_tooltip" xml:space="preserve">
+    <value>Fällt die MP unter dem definierten Wert, so wird ein MP Trank benutzt.</value>
+  </data>
+  <data name="usehppotion_tooltip" xml:space="preserve">
+    <value>Fällt die HP unter dem definierten Wert, so wird ein HP Trank benutzt.</value>
+  </data>
+  <data name="mustsethealingbefore" xml:space="preserve">
+    <value>Bitte zuerst Heal-Action im Skill Tab zuweisen bevor diese Funktion aktiviert werden kann.</value>
+  </data>
+  <data name="selfhealprotection_value_smaller_then_hppotion_value" xml:space="preserve">
+    <value>Selbstheilungswert muss kleiner als {0}% sein.</value>
+  </data>
+  <data name="cleartarget" xml:space="preserve">
+    <value>Ziel abwählen (ESC)</value>
+  </data>
+  <data name="cleartarget_tooltip" xml:space="preserve">
+    <value>Hotkey um das Ziel abzuwählen. Standardmäßig ist es die Taste ESC.</value>
+  </data>
+  <data name="motionrebuff" xml:space="preserve">
+    <value>Emoji erkennen</value>
+  </data>
+  <data name="motionrebuff_tooltip" xml:space="preserve">
+    <value>Mit dieser Einstellung kann ein Rebuff anhand eines Emoji, welches vom selektiertem Spieler gesendet wird gestartet werden. Es muss somit nicht der Bot für ein Rebuff aufgerufen werden und kann vollständig im Hintergrund laufen.</value>
+  </data>
+  <data name="heal_healrain" xml:space="preserve">
+    <value>Heal / Heal Rain</value>
+  </data>
+  <data name="heal_healrain_tooltip" xml:space="preserve">
+    <value>Auswahl zwischen welchem Skill der Heal-Bot nutzen soll. Achtung: Skill muss im Skillbaum verfügbar sein und mindestens Level 1 besitzen.</value>
+  </data>
+  <data name="heal" xml:space="preserve">
+    <value>Heal</value>
+  </data>
+  <data name="healrain" xml:space="preserve">
+    <value>Heal Rain</value>
+  </data>
+  <data name="follow" xml:space="preserve">
+    <value>Folgen</value>
+  </data>
+  <data name="refollow" xml:space="preserve">
+    <value>Automatisch Folgen</value>
+  </data>
+  <data name="refollow_tooltip" xml:space="preserve">
+    <value>Es wird im definiertem Zeitintervall der Befehl zum folgen des Ziels ausgeführt. Standardmäßig Taste Z. Taste kann unter Hotkeys geändert werden.</value>
+  </data>
+  <data name="refollowinterval" xml:space="preserve">
+    <value>Folgen Interval</value>
+  </data>
+  <data name="refollowinterval_tooltip" xml:space="preserve">
+    <value>Zeitintervall in dem erneut die Taste für folgen getätigt wird.</value>
+  </data>
+  <data name="bot" xml:space="preserve">
+    <value>Bot</value>
+  </data>
+  <data name="pausebot" xml:space="preserve">
+    <value>Bot pausieren</value>
+  </data>
+  <data name="pause" xml:space="preserve">
+    <value>Pausieren</value>
+  </data>
+  <data name="pausebot_tooltip" xml:space="preserve">
+    <value>Mit dieser Einstellung lässt sich der Bot kurzzeitig pausieren wenn Tasten oder Mausklicks im Browser ausgeführt werden. Gut um schnell bei bestimmten Ereignissen eingreifen zu können z.B angriffe von Aggro Mobs.</value>
+  </data>
+  <data name="pausebottime" xml:space="preserve">
+    <value>Zeit</value>
+  </data>
+  <data name="pausebottime_tooltip" xml:space="preserve">
+    <value>Bot wird für X Sekunden bei Interaktionen mit Tastatur oder Maus pausiert.</value>
+  </data>
+  <data name="buylicense" xml:space="preserve">
+    <value>Lizenz kaufen</value>
+  </data>
+  <data name="joindiscord" xml:space="preserve">
+    <value>DISCORD BEITRETEN</value>
+  </data>
+  <data name="usefull" xml:space="preserve">
+    <value>Nützliches</value>
+  </data>
+  <data name="checklicense" xml:space="preserve">
+    <value>Lizenz prüfen</value>
+  </data>
+  <data name="demoend" xml:space="preserve">
+    <value>Testzeit beendet</value>
+  </data>
+  <data name="enterlicense" xml:space="preserve">
+    <value>Lizenz eintragen</value>
+  </data>
+  <data name="licenseexample" xml:space="preserve">
+    <value>XXXXXXXX-XXXXXXXX-XXXXXXXX-XXXXXXXX</value>
+  </data>
+  <data name="license" xml:space="preserve">
+    <value>Lizenz</value>
+  </data>
+  <data name="erroroccurred" xml:space="preserve">
+    <value>Fehler</value>
+  </data>
+  <data name="license_in_use" xml:space="preserve">
+    <value>Lizenz ist bereits in benutzung</value>
+  </data>
+  <data name="unknowerroroccurred" xml:space="preserve">
+    <value>Unbekannter Fehler aufgetreten. Bitte auf Discord um Hilfe bitten</value>
+  </data>
+  <data name="success" xml:space="preserve">
+    <value>Erfolgreich</value>
+  </data>
+  <data name="licensregistersuccess" xml:space="preserve">
+    <value>Lizenz erfolgreich registriert</value>
+  </data>
+  <data name="releaselicense" xml:space="preserve">
+    <value>Lizenz freigeben</value>
+  </data>
+  <data name="releaselicense_tooltip" xml:space="preserve">
+    <value>Lizenz kann nur auf einem Computer gleichzeitig aktiviert werden. Mit der Freigabe wird deine Lizenz wieder freigegeben und du kannst diese auf einem anderem Computer wieder verwenden. </value>
+  </data>
+  <data name="licensereleased" xml:space="preserve">
+    <value>Lizenz wurde freigegeben</value>
+  </data>
+  <data name="enterlicense_tooltip" xml:space="preserve">
+    <value>Lizenze eintragen</value>
+  </data>
+  <data name="checkupdate" xml:space="preserve">
+    <value>Update prüfen</value>
+  </data>
+  <data name="update" xml:space="preserve">
+    <value>Update</value>
+  </data>
+  <data name="updateavailable" xml:space="preserve">
+    <value>Update verfügbar. Gehe auf Discord um die neuste Version zu downloaden.</value>
+  </data>
+  <data name="noupdateavailable" xml:space="preserve">
+    <value>Kein Update verfügbar</value>
+  </data>
+  <data name="reset" xml:space="preserve">
+    <value>Zurücksetzen</value>
+  </data>
+  <data name="reset_tooltip" xml:space="preserve">
+    <value>Alle Einstellungen zurücksetzen. Deine Linzens geht nicht verloren.</value>
+  </data>
+  <data name="presskey" xml:space="preserve">
+    <value>Wartet auf Tastendruck ...</value>
+  </data>
+  <data name="waiting" xml:space="preserve">
+    <value>Wartet...</value>
+  </data>
+  <data name="presskeydescription" xml:space="preserve">
+    <value>Beliebige Taste oder Tastenkombination drücken</value>
+  </data>
+  <data name="enterforreset" xml:space="preserve">
+    <value>Enter-Taste drücken um Hotkey zu deaktivieren</value>
+  </data>
+  <data name="clicktosethotkey" xml:space="preserve">
+    <value>Klicken um Hotkey zu setzen</value>
+  </data>
+  <data name="clicktoresethotkey" xml:space="preserve">
+    <value>Klicken um Hotkey zu reseten</value>
+  </data>
+  <data name="criticalhealingduration" xml:space="preserve">
+    <value>Kritische Heilung Dauer</value>
+  </data>
+  <data name="criticalhealingduration_tooltip" xml:space="preserve">
+    <value>Gibt an wie lange eine kritische Heilung durgeführt werden soll. Spieler wird X Sekunden lang wird ohne pause geheilt.</value>
+  </data>
+  <data name="buffs" xml:space="preserve">
+    <value>Buffs</value>
+  </data>
+  <data name="durationbetweenbuffs" xml:space="preserve">
+    <value>Zeit zwischen den Buffs</value>
+  </data>
+  <data name="durationbetweenbuffs_tooltip" xml:space="preserve">
+    <value>Je nach Magiebeschleunigung kann diese Zeit kürzer gesetzt werden. Sollte die Zeit zu kurz eingetsellt sein, kann es sein das Buffs beim Rebuffen nicht ausgeführt werden. Einstellung betrifft nicht dem Buff Heal oder Heal Rain</value>
+  </data>
+  <data name="captchadetection" xml:space="preserve">
+    <value>Captcha Erkennung</value>
+  </data>
+  <data name="captcha" xml:space="preserve">
+    <value>Captcha</value>
+  </data>
+  <data name="captchadetection_tooltip" xml:space="preserve">
+    <value>Wenn ein Captcha im Bildschirm auftaucht, so wird der Bot sich mit einem Ton bemerkbar machen.</value>
+  </data>
+  <data name="captchadetectionsound" xml:space="preserve">
+    <value>Ton</value>
+  </data>
+  <data name="captchadetectionsound_tooltip" xml:space="preserve">
+    <value>Sound wird abgespielt sobald ein Captcha auf dem Bildschirm erkennt wird.</value>
+  </data>
+  <data name="distance" xml:space="preserve">
+    <value>Entfernung</value>
+  </data>
+  <data name="maindistanceoncalibration" xml:space="preserve">
+    <value>In Kalibrierung</value>
+  </data>
+  <data name="maindistancetofaraway" xml:space="preserve">
+    <value>Zu weit Weg</value>
+  </data>
+  <data name="ok" xml:space="preserve">
+    <value>Ok</value>
+  </data>
+  <data name="checkdistance" xml:space="preserve">
+    <value>Entfernung prüfen</value>
+  </data>
+  <data name="checkdistance_tooltip" xml:space="preserve">
+    <value>Bot prüft die Distanz zum Spieler und Heilt/Bufft diesen nur wenn er in der Nähe ist. Achtung! Wir empfehlen diese Funktion nur bei 1v1 Spielern zu nutzen da bei AOE wichtige Elemente für die Analyse durch die Monster verdeckt werden.</value>
+  </data>
+  <data name="detectzoom" xml:space="preserve">
+    <value>Zoom erkennen</value>
+  </data>
+  <data name="detectzoom_description" xml:space="preserve">
+    <value>Prüfe deinen Windows Zoom in den Anzeigeeinstellungen. Der Bot wird nur bei einer Skalierung und Anordnung von 100% funktionieren.</value>
+  </data>
+  <data name="autoress" xml:space="preserve">
+    <value>Automatische Wiederbelebung</value>
+  </data>
+  <data name="autoress_tooltip" xml:space="preserve">
+    <value>Wenn der Main Player stirbt, so wir automatisch Resurrection ausgeführt.</value>
+  </data>
+  <data name="mustsetresurrectionbefore" xml:space="preserve">
+    <value>Bitte zuerst Resurrection-Action im Skill Tab zuweisen bevor diese Funktion aktiviert werden kann.</value>
+  </data>
+  <data name="resurrects" xml:space="preserve">
+    <value>Wiederbelebung</value>
+  </data>
+  <data name="rebuffafterresurrection" xml:space="preserve">
+    <value>Rebuff nach Wiederbelebung</value>
+  </data>
+  <data name="rebuffafterresurrection_tooltip" xml:space="preserve">
+    <value>Rebuff nach der Wiederbelebung starten</value>
+  </data>
+  <data name="globalhotkeys" xml:space="preserve">
+    <value>Globale Hotkeys</value>
+  </data>
+  <data name="wrongkeycombination" xml:space="preserve">
+    <value>Keine gültige Kombination</value>
+  </data>
+  <data name="wrongkeycombination_message" xml:space="preserve">
+    <value>Bitte mindestens {0} normale Taste/n und mindestens {1} Systemtaste/n ( Strg, Ctrl, Shift ) müssen vorhanden sein.</value>
+  </data>
+  <data name="mustsetgtbefore" xml:space="preserve">
+    <value>Bitte zuerst Geburah Tiphret im Skill Tab zuweisen bevor diese Funktion aktiviert werden kann.</value>
+  </data>
+  <data name="mustsetholyguardbefore" xml:space="preserve">
+    <value>Bitte zuerst Holy Guard im Skill Tab zuweisen bevor diese Funktion aktiviert werden kann.</value>
+  </data>
+  <data name="custom" xml:space="preserve">
+    <value>Benutzerdefiniert</value>
+  </data>
+  <data name="addcustomhotkey" xml:space="preserve">
+    <value>Hotkey hinzufügen</value>
+  </data>
+  <data name="deleteglobalhotkey" xml:space="preserve">
+    <value>Willst du den Global Hotkey {0} wirklich löschen?</value>
+  </data>
+  <data name="delete" xml:space="preserve">
+    <value>Löschen</value>
+  </data>
+  <data name="deleteglobalhotkeyitem" xml:space="preserve">
+    <value>Willst du den Global Hotkey-Action wirklich löschen?</value>
+  </data>
+  <data name="maindistancenotonscreen" xml:space="preserve">
+    <value>Nicht auffindbar</value>
+  </data>
+  <data name="mirror" xml:space="preserve">
+    <value>Globale Hotkeys</value>
+  </data>
+  <data name="mirror_tooltip" xml:space="preserve">
+    <value>Mit den globalen Hotkeys kannst du Aktionsfolgen durch eine Tastenkombination im Bot ausführen ohne dass das Botfenster aktiv geöffnet sein muss. Z.b kannst du eine Tastenkombination auf deinem Main drücken sodass der FS dir Holy Guard vor einem AOE bufft. Teste es einfach aus. Setze eine beliebige Tastenkombination auf den Globalen Hotkey Rebuff, starte den Bot, selektiere deinen Main, minimiere den Bot und presse die Tastenkombination auf deinem Main. Du wirst sehen, der FS rebufft dich nun von Zauberhand. So kannst du z.B auch den Bot auf ein Fluggerät steigen lassen wenn du eine Tastenkombination klickst und vieles mehr.</value>
+  </data>
+  <data name="executehotkey" xml:space="preserve">
+    <value>Hotkey {0} wird ausgeführt</value>
+  </data>
+  <data name="donate" xml:space="preserve">
+    <value>Spenden</value>
+  </data>
+</root>

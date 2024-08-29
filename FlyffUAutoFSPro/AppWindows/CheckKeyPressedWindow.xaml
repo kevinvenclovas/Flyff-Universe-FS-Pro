@@ -1,0 +1,24 @@
+﻿<Window x:Class="FlyffUAutoFSPro.AppWindows.CheckKeyPressedWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FlyffUAutoFSPro.AppWindows"
+        mc:Ignorable="d"
+        xmlns:p = "clr-namespace:FlyffUAutoFSPro.Properties"
+        PreviewKeyDown="Window_KeyDown"
+        PreviewKeyUp="Window_KeyUp"
+        Height="200" Width="500">
+    <Grid>
+
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" >
+            <Label Content="{x:Static p:Resources.presskeydescription}" FontSize="14" HorizontalAlignment="Center"></Label>
+            <Label x:Name="PressedButtonLabel" Content="{x:Static p:Resources.waiting}" HorizontalAlignment="Center" FontSize="36"></Label>
+        </StackPanel>
+
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Bottom" >
+            <Label Content="{x:Static p:Resources.enterforreset}" FontSize="10" HorizontalAlignment="Center" Background="{x:Null}" Foreground="#FFBDBDBD"></Label>
+        </StackPanel>
+
+    </Grid>
+</Window>

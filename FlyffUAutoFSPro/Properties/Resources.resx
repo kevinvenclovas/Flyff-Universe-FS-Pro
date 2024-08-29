@@ -1,0 +1,784 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="BarSwitcherGray" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\barswitchergray.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="FPText" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\fptext.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HPText" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\hptext.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MPText" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\mptext.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mystatus" xml:space="preserve">
+    <value>My Status</value>
+  </data>
+  <data name="skills" xml:space="preserve">
+    <value>Skills</value>
+  </data>
+  <data name="rebuff" xml:space="preserve">
+    <value>Rebuff</value>
+  </data>
+  <data name="start" xml:space="preserve">
+    <value>START</value>
+  </data>
+  <data name="stop" xml:space="preserve">
+    <value>STOP</value>
+  </data>
+  <data name="selectedplayer" xml:space="preserve">
+    <value>Selected Player</value>
+  </data>
+  <data name="hppotion" xml:space="preserve">
+    <value>HP Potion:</value>
+  </data>
+  <data name="mppotion" xml:space="preserve">
+    <value>MP Potion:</value>
+  </data>
+  <data name="fppotion" xml:space="preserve">
+    <value>FP Potion:</value>
+  </data>
+  <data name="disabled" xml:space="preserve">
+    <value>Not activ</value>
+  </data>
+  <data name="status" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="selfhealprotection" xml:space="preserve">
+    <value>Self Heal</value>
+  </data>
+  <data name="selfhealprotection_tooltipp" xml:space="preserve">
+    <value>If the own HP falls below the defined value then the selected player is deselected (ESC) and the self-healing is started. Useful when even faster healing is needed to survive attacks from aggro monsters. If Heal Rain is used, the player is not deselected.</value>
+  </data>
+  <data name="BarSwitcher" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\barswitcher.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="hppotion_tooltip" xml:space="preserve">
+    <value>Hotkey for food and other items to restore HP.</value>
+  </data>
+  <data name="fppotion_tooltip" xml:space="preserve">
+    <value>Hotkey for potions and other items to restore FP.</value>
+  </data>
+  <data name="mppotion_tooltip" xml:space="preserve">
+    <value>Hotkey for potions and other items to restore MP.</value>
+  </data>
+  <data name="selfhealprotection_value_tooltip" xml:space="preserve">
+    <value>If the own HP falls below this value, the self healing is activated. </value>
+  </data>
+  <data name="hotkeys" xml:space="preserve">
+    <value>Hotkeys</value>
+  </data>
+  <data name="settings" xml:space="preserve">
+    <value>Settings</value>
+  </data>
+  <data name="statusT" xml:space="preserve">
+    <value>Status (T)</value>
+  </data>
+  <data name="followZ" xml:space="preserve">
+    <value>Follow traget (Z)</value>
+  </data>
+  <data name="statusT_tooltip" xml:space="preserve">
+    <value>Hotkey to open the status window. By default it is the letter T.</value>
+  </data>
+  <data name="followZ_tooltip" xml:space="preserve">
+    <value>Hotkey to follow a target. By default it is the letter Z.</value>
+  </data>
+  <data name="gtautorebuff" xml:space="preserve">
+    <value>GT Autorebuff</value>
+  </data>
+  <data name="gtautorebuff_tooltipp" xml:space="preserve">
+    <value>With this setting, the Geburah Tiphreth (GT) buff is automatically re-buffed after the specified time.</value>
+  </data>
+  <data name="gtautorebuff_value_tooltip" xml:space="preserve">
+    <value>GT is automatically rebuffed after the specified seconds. </value>
+  </data>
+  <data name="rebuffgt" xml:space="preserve">
+    <value>Rebuff GT</value>
+  </data>
+  <data name="info" xml:space="preserve">
+    <value>Info</value>
+  </data>
+  <data name="hotkeyalreadyinuse" xml:space="preserve">
+    <value>Hotkey is already in use and cannot be used again.</value>
+  </data>
+  <data name="normalhealing" xml:space="preserve">
+    <value>Normal Healing</value>
+  </data>
+  <data name="criticalhealing" xml:space="preserve">
+    <value>Critical Healing</value>
+  </data>
+  <data name="healing" xml:space="preserve">
+    <value>Healing</value>
+  </data>
+  <data name="normalhealing_tooltip" xml:space="preserve">
+    <value>If the HP of the selected player falls below the specified value, a one-time healing is performed.</value>
+  </data>
+  <data name="criticalhealing_tooltip" xml:space="preserve">
+    <value>If the HP of the selected player falls below the specified value, a critical heal is performed. Healing is performed for several seconds without pause.</value>
+  </data>
+  <data name="criticalhealing_not_bigger_than_normal" xml:space="preserve">
+    <value>Critical healing value cannot be greater than the normal healing value.</value>
+  </data>
+  <data name="normalhealing_not_smaller_than_critical" xml:space="preserve">
+    <value>Normal healing value cannot be smaller than critical healing value.</value>
+  </data>
+  <data name="DeselectIconPlayer" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\deselecticonplayer.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GoodHPPixelColors" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\goodhppixelcolors.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="usehppotion" xml:space="preserve">
+    <value>Use HP Potion on:</value>
+  </data>
+  <data name="usemppotion" xml:space="preserve">
+    <value>Use MP Potion on:</value>
+  </data>
+  <data name="usemppotion_tooltip" xml:space="preserve">
+    <value>If the MP falls below the defined value, an MP potion is used.</value>
+  </data>
+  <data name="usehppotion_tooltip" xml:space="preserve">
+    <value>If the HP falls below the defined value, an HP potion is used.</value>
+  </data>
+  <data name="mustsethealingbefore" xml:space="preserve">
+    <value>Please assign Heal-Action in the skill tab first before this function can be activated.</value>
+  </data>
+  <data name="selfhealprotection_value_smaller_then_hppotion_value" xml:space="preserve">
+    <value>Self-healing value must be less than {0}%.</value>
+  </data>
+  <data name="cleartarget" xml:space="preserve">
+    <value>Clear target</value>
+  </data>
+  <data name="cleartarget_tooltip" xml:space="preserve">
+    <value>Hotkey to deselect the target. By default it is the ESC key.</value>
+  </data>
+  <data name="motion_ache" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\motion\motion_ache.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="motion_aha" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\motion\motion_aha.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="motion_anger" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\motion\motion_anger.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="motion_blush" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\motion\motion_blush.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="motion_catface" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\motion\motion_catface.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="motion_confused" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\motion\motion_confused.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="motion_crazy" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\motion\motion_crazy.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="motion_embarrassed" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\motion\motion_embarrassed.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="motion_glare" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\motion\motion_glare.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="motion_help" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\motion\motion_help.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="motion_hunger" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\motion\motion_hunger.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="motion_kiss" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\motion\motion_kiss.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="motion_laugh" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\motion\motion_laugh.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="motion_love" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\motion\motion_love.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="motion_mad" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\motion\motion_mad.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="motion_oh" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\motion\motion_oh.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="motion_ouch" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\motion\motion_ouch.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="motion_rich" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\motion\motion_rich.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="motion_ridicule" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\motion\motion_ridicule.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="motion_sad" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\motion\motion_sad.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="motion_sigh" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\motion\motion_sigh.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="motion_sleepy" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\motion\motion_sleepy.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="motion_sneer" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\motion\motion_sneer.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="motion_sparkle" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\motion\motion_sparkle.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="motion_surprise" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\motion\motion_surprise.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="motion_sweat" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\motion\motion_sweat.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="motion_tongue" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\motion\motion_tongue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="motion_wink" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\motion\motion_wink.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="motion_yummy" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\motion\motion_yummy.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="motion_ache_search1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\motion\search\motion_ache_search.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="motion_aha_search" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\motion\search\motion_aha_search.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="motion_anger_search" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\motion\search\motion_anger_search.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="motion_blush_search" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\motion\search\motion_blush_search.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="motion_catface_search" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\motion\search\motion_catface_search.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="motion_confused_search" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\motion\search\motion_confused_search.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="motion_crazy_search" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\motion\search\motion_crazy_search.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="motion_embarrassed_search" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\motion\search\motion_embarrassed_search.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="motion_glare_search" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\motion\search\motion_glare_search.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="motion_help_search" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\motion\search\motion_help_search.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="motion_hunger_search" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\motion\search\motion_hunger_search.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="motion_kiss_search" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\motion\search\motion_kiss_search.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="motion_laugh_search" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\motion\search\motion_laugh_search.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="motion_love_search" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\motion\search\motion_love_search.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="motion_mad_search" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\motion\search\motion_mad_search.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="motion_oh_search" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\motion\search\motion_oh_search.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="motion_ouch_search" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\motion\search\motion_ouch_search.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="motion_rich_search" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\motion\search\motion_rich_search.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="motion_ridicule_search" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\motion\search\motion_ridicule_search.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="motion_sad_search" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\motion\search\motion_sad_search.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="motion_sigh_search" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\motion\search\motion_sigh_search.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="motion_sleepy_search" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\motion\search\motion_sleepy_search.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="motion_sneer_search" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\motion\search\motion_sneer_search.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="motion_sparkle_search" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\motion\search\motion_sparkle_search.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="motion_surprise_search" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\motion\search\motion_surprise_search.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="motion_sweat_search" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\motion\search\motion_sweat_search.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="motion_tongue_search" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\motion\search\motion_tongue_search.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="motion_wink_search" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\motion\search\motion_wink_search.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="motion_yummy_search" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\motion\search\motion_yummy_search.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="motion_ache_search" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\motion\search\motion_ache_search.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="motionrebuff" xml:space="preserve">
+    <value>Detect emoji</value>
+  </data>
+  <data name="motionrebuff_tooltip" xml:space="preserve">
+    <value>With this setting a rebuff can be started by an emoji sent by the selected player. This means that the bot does not have to be called for a rebuff and can run completely in the background.</value>
+  </data>
+  <data name="heal_healrain" xml:space="preserve">
+    <value>Heal / Heal Rain</value>
+  </data>
+  <data name="heal_healrain_tooltip" xml:space="preserve">
+    <value>Selection between which skill the heal bot should use. Note: Skill must be available in the skill tree and have at least level 1.</value>
+  </data>
+  <data name="heal" xml:space="preserve">
+    <value>Heal</value>
+  </data>
+  <data name="healrain" xml:space="preserve">
+    <value>Heal Rain</value>
+  </data>
+  <data name="follow" xml:space="preserve">
+    <value>Follow</value>
+  </data>
+  <data name="refollow" xml:space="preserve">
+    <value>Follow automatically</value>
+  </data>
+  <data name="refollow_tooltip" xml:space="preserve">
+    <value>The command to follow the target is executed in the defined time interval. Default key Z. Key can be changed under Hotkeys.</value>
+  </data>
+  <data name="refollowinterval" xml:space="preserve">
+    <value>Follow interval</value>
+  </data>
+  <data name="refollowinterval_tooltip" xml:space="preserve">
+    <value>Time interval in which the key is pressed again for follow.</value>
+  </data>
+  <data name="bot" xml:space="preserve">
+    <value>Bot</value>
+  </data>
+  <data name="pausebot" xml:space="preserve">
+    <value>Pause Bot</value>
+  </data>
+  <data name="pause" xml:space="preserve">
+    <value>Pause</value>
+  </data>
+  <data name="pausebot_tooltip" xml:space="preserve">
+    <value>With this setting the bot can be paused for a short time when keys or mouse clicks are executed in the browser. Good to be able to quickly intervene in certain events, e.g. attacks from aggro mobs.</value>
+  </data>
+  <data name="pausebottime" xml:space="preserve">
+    <value>Time</value>
+  </data>
+  <data name="pausebottime_tooltip" xml:space="preserve">
+    <value>Bot wird für X Sekunden bei Interaktionen mit Tastatur oder Maus pausiert.</value>
+  </data>
+  <data name="buylicense" xml:space="preserve">
+    <value>Buy License</value>
+  </data>
+  <data name="joindiscord" xml:space="preserve">
+    <value>JOIN DISCORD</value>
+  </data>
+  <data name="usefull" xml:space="preserve">
+    <value>Usefull</value>
+  </data>
+  <data name="checklicense" xml:space="preserve">
+    <value>Check License</value>
+  </data>
+  <data name="demoend" xml:space="preserve">
+    <value>Test period finished</value>
+  </data>
+  <data name="enterlicense" xml:space="preserve">
+    <value>Enter License</value>
+  </data>
+  <data name="licenseexample" xml:space="preserve">
+    <value>XXXXXXXX-XXXXXXXX-XXXXXXXX-XXXXXXXX</value>
+  </data>
+  <data name="license" xml:space="preserve">
+    <value>License</value>
+  </data>
+  <data name="erroroccurred" xml:space="preserve">
+    <value>Error</value>
+  </data>
+  <data name="license_in_use" xml:space="preserve">
+    <value>License already in use</value>
+  </data>
+  <data name="unknowerroroccurred" xml:space="preserve">
+    <value>Unknown error occurred. Please request help on discord</value>
+  </data>
+  <data name="success" xml:space="preserve">
+    <value>Success</value>
+  </data>
+  <data name="licensregistersuccess" xml:space="preserve">
+    <value>License successfully registered</value>
+  </data>
+  <data name="releaselicense" xml:space="preserve">
+    <value>Release license</value>
+  </data>
+  <data name="releaselicense_tooltip" xml:space="preserve">
+    <value>License can be activated only on one computer at a time. Upon release, your license will be released and you can use it again on another computer. </value>
+  </data>
+  <data name="licensereleased" xml:space="preserve">
+    <value>License released</value>
+  </data>
+  <data name="enterlicense_tooltip" xml:space="preserve">
+    <value>Enter license</value>
+  </data>
+  <data name="checkupdate" xml:space="preserve">
+    <value>Check Update</value>
+  </data>
+  <data name="update" xml:space="preserve">
+    <value>Update</value>
+  </data>
+  <data name="updateavailable" xml:space="preserve">
+    <value>Update available. Go to Discord to download the latest version.</value>
+  </data>
+  <data name="noupdateavailable" xml:space="preserve">
+    <value>No update available</value>
+  </data>
+  <data name="reset" xml:space="preserve">
+    <value>Reset</value>
+  </data>
+  <data name="reset_tooltip" xml:space="preserve">
+    <value>Reset all settings. Your Linzens will not be lost.</value>
+  </data>
+  <data name="presskey" xml:space="preserve">
+    <value>Waits for keystroke ...</value>
+  </data>
+  <data name="waiting" xml:space="preserve">
+    <value>Waiting...</value>
+  </data>
+  <data name="presskeydescription" xml:space="preserve">
+    <value>Press any key or key combination</value>
+  </data>
+  <data name="enterforreset" xml:space="preserve">
+    <value>Press Enter-Button to deactivate hotkey</value>
+  </data>
+  <data name="clicktosethotkey" xml:space="preserve">
+    <value>Click to set hotkey</value>
+  </data>
+  <data name="clicktoresethotkey" xml:space="preserve">
+    <value>Click to reset hotkey</value>
+  </data>
+  <data name="criticalhealingduration" xml:space="preserve">
+    <value>Critical healing duration</value>
+  </data>
+  <data name="criticalhealingduration_tooltip" xml:space="preserve">
+    <value>Specifies how long a critical heal should be performed. Player will be healed for X seconds without pause.</value>
+  </data>
+  <data name="buffs" xml:space="preserve">
+    <value>Buffs</value>
+  </data>
+  <data name="durationbetweenbuffs" xml:space="preserve">
+    <value>Time between buffs</value>
+  </data>
+  <data name="durationbetweenbuffs_tooltip" xml:space="preserve">
+    <value>Depending on the magic acceleration, this time can be set shorter. If the time is set too short, it is possible that buffs are not executed when rebuffing. Setting does not affect the buff Heal or Heal Rain</value>
+  </data>
+  <data name="Captcha1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\captcha1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Captcha2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\captcha2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="captchadetection" xml:space="preserve">
+    <value>Captcha Detection</value>
+  </data>
+  <data name="captcha_detected_s1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\audio\captcha_detected_s1.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="captcha" xml:space="preserve">
+    <value>Captcha</value>
+  </data>
+  <data name="captchadetection_tooltip" xml:space="preserve">
+    <value>When a captcha appears in the screen, the bot plays a short sound.</value>
+  </data>
+  <data name="captchadetectionsound" xml:space="preserve">
+    <value>Sound</value>
+  </data>
+  <data name="captchadetectionsound_tooltip" xml:space="preserve">
+    <value>Sound is played when a captcha is recognized on the screen.</value>
+  </data>
+  <data name="captcha_detected_s2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\audio\captcha_detected_s2.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="SelectArrow1BottomLeft" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\selectedarrow\bottomleft\selectarrow1bottomleft.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SelectArrow1BottomRight" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\selectedarrow\bottomright\selectarrow1bottomright.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SelectArrow1TopLeft" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\selectedarrow\topleft\selectarrow1topleft.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SelectArrow1TopRight" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\selectedarrow\topright\selectarrow1topright.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SelectArrow2BottomLeft" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\selectedarrow\bottomleft\selectarrow2bottomleft.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SelectArrow2BottomRight" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\selectedarrow\bottomright\selectarrow2bottomright.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SelectArrow2TopLeft" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\selectedarrow\topleft\selectarrow2topleft.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SelectArrow2TopRight" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\selectedarrow\topright\selectarrow2topright.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SelectArrow3BottomLeft" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\selectedarrow\bottomleft\selectarrow3bottomleft.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SelectArrow3BottomRight" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\selectedarrow\bottomright\selectarrow3bottomright.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SelectArrow3TopLeft" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\selectedarrow\topleft\selectarrow3topleft.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SelectArrow3TopRight" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\selectedarrow\topright\selectarrow3topright.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SelectArrow4BottomLeft" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\selectedarrow\bottomleft\selectarrow4bottomleft.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SelectArrow4BottomRight" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\selectedarrow\bottomright\selectarrow4bottomright.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SelectArrow4TopLeft" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\selectedarrow\topleft\selectarrow4topleft.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SelectArrow4TopRight" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\selectedarrow\topright\selectarrow4topright.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SelectArrow5BottomLeft" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\selectedarrow\bottomleft\selectarrow5bottomleft.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SelectArrow5BottomRight" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\selectedarrow\bottomright\selectarrow5bottomright.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SelectArrow5TopLeft" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\selectedarrow\topleft\selectarrow5topleft.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SelectArrow5TopRight" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\selectedarrow\topright\selectarrow5topright.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="distance" xml:space="preserve">
+    <value>Distance</value>
+  </data>
+  <data name="maindistanceoncalibration" xml:space="preserve">
+    <value>In calibration</value>
+  </data>
+  <data name="maindistancetofaraway" xml:space="preserve">
+    <value>To far away</value>
+  </data>
+  <data name="ok" xml:space="preserve">
+    <value>Ok</value>
+  </data>
+  <data name="checkdistance" xml:space="preserve">
+    <value>Check distance</value>
+  </data>
+  <data name="checkdistance_tooltip" xml:space="preserve">
+    <value>Bot checks the distance to the player and heals/buffs him only when he is near. Attention! We recommend to use this function only with 1v1 players because with AOE players important elements for the analysis are hidden by the monsters.</value>
+  </data>
+  <data name="Screenshot" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\screenshot.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="detectzoom" xml:space="preserve">
+    <value>Zoom detect</value>
+  </data>
+  <data name="detectzoom_description" xml:space="preserve">
+    <value>Check your Windows zoom in the display settings. The bot will only work with a scaling and arrangement of 100%.</value>
+  </data>
+  <data name="autoress" xml:space="preserve">
+    <value>Auto Ress</value>
+  </data>
+  <data name="autoress_tooltip" xml:space="preserve">
+    <value>When the main player dies, Resurrection is automatically executed.</value>
+  </data>
+  <data name="mustsetresurrectionbefore" xml:space="preserve">
+    <value>Please assign Resurrection-Action in the skill tab first before this function can be activated.</value>
+  </data>
+  <data name="resurrects" xml:space="preserve">
+    <value>Resurrects </value>
+  </data>
+  <data name="rebuffafterresurrection" xml:space="preserve">
+    <value>Rebuff after Resurrection</value>
+  </data>
+  <data name="rebuffafterresurrection_tooltip" xml:space="preserve">
+    <value>Start rebuff after Resurrection</value>
+  </data>
+  <data name="globalhotkeys" xml:space="preserve">
+    <value>Global Hotkeys</value>
+  </data>
+  <data name="wrongkeycombination" xml:space="preserve">
+    <value>Not a valid combination</value>
+  </data>
+  <data name="wrongkeycombination_message" xml:space="preserve">
+    <value>Please have at least {0} normal key/s and at least {1} system key/s ( Strg, Ctrl, Shift ) available.</value>
+  </data>
+  <data name="mustsetgtbefore" xml:space="preserve">
+    <value>Please assign Geburah Tiphret in the skill tab first before this function can be activated.</value>
+  </data>
+  <data name="mustsetholyguardbefore" xml:space="preserve">
+    <value>Please assign Holy Guard  in the skill tab first before this function can be activated.</value>
+  </data>
+  <data name="custom" xml:space="preserve">
+    <value>Custom</value>
+  </data>
+  <data name="addcustomhotkey" xml:space="preserve">
+    <value>Add Hotkey</value>
+  </data>
+  <data name="deleteglobalhotkey" xml:space="preserve">
+    <value>Do you really want to delete the Global Hotkey {0}?</value>
+  </data>
+  <data name="delete" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="deleteglobalhotkeyitem" xml:space="preserve">
+    <value>Global Hotkey-Action wirklich löschen?</value>
+  </data>
+  <data name="maindistancenotonscreen" xml:space="preserve">
+    <value>Not on screen</value>
+  </data>
+  <data name="mirror" xml:space="preserve">
+    <value>Global Hotkeys</value>
+  </data>
+  <data name="mirror_tooltip" xml:space="preserve">
+    <value>With the global hotkeys you can execute action sequences by a key combination in the bot without the bot window having to be actively open. For example, you can press a key combination on your main so that the FS buffs Holy Guard before an AOE. Just test it out. Set any key combination to the Global Hotkey Rebuff, start the bot, select your main, minimize the bot and press the key combination on your main. You will see that the FS rebuffs you by magic. For example, you can also make the bot rise to a flying machine when you click a key combination and much more.</value>
+  </data>
+  <data name="executehotkey" xml:space="preserve">
+    <value>Hotkey {0} is executed</value>
+  </data>
+  <data name="PlayerSelectX" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\playerselectx.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="donate" xml:space="preserve">
+    <value>Donate</value>
+  </data>
+</root>

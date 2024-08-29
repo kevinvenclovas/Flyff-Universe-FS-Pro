@@ -1,0 +1,278 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <UseWindowsForms>True</UseWindowsForms>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <CefSharpBuildAction>Content</CefSharpBuildAction>
+    <Platforms>AnyCPU;x86;x64</Platforms>
+    <ApplicationIcon>Resources\icon.ico</ApplicationIcon>
+    <AssemblyName>Auto FS Pro</AssemblyName>
+    <SignAssembly>True</SignAssembly>
+    <DelaySign>False</DelaySign>
+    <AssemblyVersion>1.0.27.0</AssemblyVersion>
+    <CefSharpAnyCpuSupport>true</CefSharpAnyCpuSupport>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <FileVersion>1.0.27.0</FileVersion>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <Prefer32Bit>False</Prefer32Bit>
+    <LangVersion>preview</LangVersion>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <Prefer32Bit>False</Prefer32Bit>
+    <LangVersion>preview</LangVersion>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x86'">
+    <Prefer32Bit>False</Prefer32Bit>
+    <LangVersion>preview</LangVersion>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x86'">
+    <Prefer32Bit>False</Prefer32Bit>
+    <LangVersion>preview</LangVersion>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Prefer32Bit>False</Prefer32Bit>
+    <LangVersion>preview</LangVersion>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Prefer32Bit>False</Prefer32Bit>
+    <LangVersion>preview</LangVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="app.manifest" />
+    <None Remove="log4net.config" />
+    <None Remove="Resources\BarSwitcher.png" />
+    <None Remove="Resources\BarSwitcherGray.png" />
+    <None Remove="Resources\Close.png" />
+    <None Remove="Resources\Close.svg" />
+    <None Remove="Resources\DeselectIconPlayer.png" />
+    <None Remove="Resources\die-info.png" />
+    <None Remove="Resources\discord.png" />
+    <None Remove="Resources\FPText.png" />
+    <None Remove="Resources\GoodHPPixelColors.png" />
+    <None Remove="Resources\HPText.png" />
+    <None Remove="Resources\icon.ico" />
+    <None Remove="Resources\Motion\motion_ache.png" />
+    <None Remove="Resources\Motion\motion_aha.png" />
+    <None Remove="Resources\Motion\motion_anger.png" />
+    <None Remove="Resources\Motion\motion_blush.png" />
+    <None Remove="Resources\Motion\motion_catface.png" />
+    <None Remove="Resources\Motion\motion_confused.png" />
+    <None Remove="Resources\Motion\motion_crazy.png" />
+    <None Remove="Resources\Motion\motion_embarrassed.png" />
+    <None Remove="Resources\Motion\motion_glare.png" />
+    <None Remove="Resources\Motion\motion_help.png" />
+    <None Remove="Resources\Motion\motion_hunger.png" />
+    <None Remove="Resources\Motion\motion_kiss.png" />
+    <None Remove="Resources\Motion\motion_laugh.png" />
+    <None Remove="Resources\Motion\motion_love.png" />
+    <None Remove="Resources\Motion\motion_mad.png" />
+    <None Remove="Resources\Motion\motion_oh.png" />
+    <None Remove="Resources\Motion\motion_ouch.png" />
+    <None Remove="Resources\Motion\motion_rich.png" />
+    <None Remove="Resources\Motion\motion_ridicule.png" />
+    <None Remove="Resources\Motion\motion_sad.png" />
+    <None Remove="Resources\Motion\motion_sigh.png" />
+    <None Remove="Resources\Motion\motion_sleepy.png" />
+    <None Remove="Resources\Motion\motion_sneer.png" />
+    <None Remove="Resources\Motion\motion_sparkle.png" />
+    <None Remove="Resources\Motion\motion_surprise.png" />
+    <None Remove="Resources\Motion\motion_sweat.png" />
+    <None Remove="Resources\Motion\motion_tongue.png" />
+    <None Remove="Resources\Motion\motion_wink.png" />
+    <None Remove="Resources\Motion\motion_yummy.png" />
+    <None Remove="Resources\Motion\Search\motion_ache_search.png" />
+    <None Remove="Resources\Motion\Search\motion_aha_search.png" />
+    <None Remove="Resources\Motion\Search\motion_anger_search.png" />
+    <None Remove="Resources\Motion\Search\motion_blush_search.png" />
+    <None Remove="Resources\Motion\Search\motion_catface_search.png" />
+    <None Remove="Resources\Motion\Search\motion_confused_search.png" />
+    <None Remove="Resources\Motion\Search\motion_crazy_search.png" />
+    <None Remove="Resources\Motion\Search\motion_embarrassed_search.png" />
+    <None Remove="Resources\Motion\Search\motion_glare_search.png" />
+    <None Remove="Resources\Motion\Search\motion_help_search.png" />
+    <None Remove="Resources\Motion\Search\motion_hunger_search.png" />
+    <None Remove="Resources\Motion\Search\motion_kiss_search.png" />
+    <None Remove="Resources\Motion\Search\motion_laugh_search.png" />
+    <None Remove="Resources\Motion\Search\motion_love_search.png" />
+    <None Remove="Resources\Motion\Search\motion_mad_search.png" />
+    <None Remove="Resources\Motion\Search\motion_oh_search.png" />
+    <None Remove="Resources\Motion\Search\motion_ouch_search.png" />
+    <None Remove="Resources\Motion\Search\motion_rich_search.png" />
+    <None Remove="Resources\Motion\Search\motion_ridicule_search.png" />
+    <None Remove="Resources\Motion\Search\motion_sad_search.png" />
+    <None Remove="Resources\Motion\Search\motion_sigh_search.png" />
+    <None Remove="Resources\Motion\Search\motion_sleepy_search.png" />
+    <None Remove="Resources\Motion\Search\motion_sneer_search.png" />
+    <None Remove="Resources\Motion\Search\motion_sparkle_search.png" />
+    <None Remove="Resources\Motion\Search\motion_surprise_search.png" />
+    <None Remove="Resources\Motion\Search\motion_sweat_search.png" />
+    <None Remove="Resources\Motion\Search\motion_tongue_search.png" />
+    <None Remove="Resources\Motion\Search\motion_wink_search.png" />
+    <None Remove="Resources\Motion\Search\motion_yummy_search.png" />
+    <None Remove="Resources\MPText.png" />
+    <None Remove="Resources\Questionmark.svg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="log4net.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="cef.redist.x64" Version="107.1.4" />
+    <PackageReference Include="cef.redist.x86" Version="107.1.4" />
+    <PackageReference Include="CefSharp.Wpf.NETCore" Version="107.1.50" />
+    <PackageReference Include="DeviceId" Version="6.2.0" />
+    <PackageReference Include="DeviceId.Windows" Version="6.2.0" />
+    <PackageReference Include="DeviceId.Windows.Wmi" Version="6.2.0" />
+    <PackageReference Include="FontAwesome.WPF" Version="4.7.0.9" />
+    <PackageReference Include="log4net" Version="2.0.15" />
+    <PackageReference Include="Microsoft.Toolkit.Uwp.Notifications" Version="7.1.3" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+    <PackageReference Include="PortableSettingsProvider" Version="0.2.4" />
+    <PackageReference Include="Refractored.MvvmHelpers" Version="1.6.2" />
+    <PackageReference Include="Sentry" Version="3.23.1" />
+    <PackageReference Include="SharpVectors" Version="1.8.1" />
+    <PackageReference Include="System.Drawing.Primitives" Version="4.3.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\NonInvasiveKeyboardHook\source\NonInvasiveKeyboardHook\NonInvasiveKeyboardHookLibrary\NonInvasiveKeyboardHookLibrary.Core.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\BarSwitcher.png" />
+    <Resource Include="Resources\BarSwitcherGray.png" />
+    <Resource Include="Resources\Close.png" />
+    <Resource Include="Resources\Close.svg" />
+    <Resource Include="Resources\DeselectIconPlayer.png" />
+    <Resource Include="Resources\die-info.png" />
+    <Resource Include="Resources\discord.png" />
+    <Resource Include="Resources\FPText.png" />
+    <Resource Include="Resources\GoodHPPixelColors.png" />
+    <Resource Include="Resources\HPText.png" />
+    <Resource Include="Resources\icon.ico" />
+    <Resource Include="Resources\Motion\motion_ache.png" />
+    <Resource Include="Resources\Motion\motion_aha.png" />
+    <Resource Include="Resources\Motion\motion_anger.png" />
+    <Resource Include="Resources\Motion\motion_blush.png" />
+    <Resource Include="Resources\Motion\motion_catface.png" />
+    <Resource Include="Resources\Motion\motion_confused.png" />
+    <Resource Include="Resources\Motion\motion_crazy.png" />
+    <Resource Include="Resources\Motion\motion_embarrassed.png" />
+    <Resource Include="Resources\Motion\motion_glare.png" />
+    <Resource Include="Resources\Motion\motion_help.png" />
+    <Resource Include="Resources\Motion\motion_hunger.png" />
+    <Resource Include="Resources\Motion\motion_kiss.png" />
+    <Resource Include="Resources\Motion\motion_laugh.png" />
+    <Resource Include="Resources\Motion\motion_love.png" />
+    <Resource Include="Resources\Motion\motion_mad.png" />
+    <Resource Include="Resources\Motion\motion_oh.png" />
+    <Resource Include="Resources\Motion\motion_ouch.png" />
+    <Resource Include="Resources\Motion\motion_rich.png" />
+    <Resource Include="Resources\Motion\motion_ridicule.png" />
+    <Resource Include="Resources\Motion\motion_sad.png" />
+    <Resource Include="Resources\Motion\motion_sigh.png" />
+    <Resource Include="Resources\Motion\motion_sleepy.png" />
+    <Resource Include="Resources\Motion\motion_sneer.png" />
+    <Resource Include="Resources\Motion\motion_sparkle.png" />
+    <Resource Include="Resources\Motion\motion_surprise.png" />
+    <Resource Include="Resources\Motion\motion_sweat.png" />
+    <Resource Include="Resources\Motion\motion_tongue.png" />
+    <Resource Include="Resources\Motion\motion_wink.png" />
+    <Resource Include="Resources\Motion\motion_yummy.png" />
+    <Resource Include="Resources\Motion\Search\motion_ache_search.png" />
+    <Resource Include="Resources\Motion\Search\motion_aha_search.png" />
+    <Resource Include="Resources\Motion\Search\motion_anger_search.png" />
+    <Resource Include="Resources\Motion\Search\motion_blush_search.png" />
+    <Resource Include="Resources\Motion\Search\motion_catface_search.png" />
+    <Resource Include="Resources\Motion\Search\motion_confused_search.png" />
+    <Resource Include="Resources\Motion\Search\motion_crazy_search.png" />
+    <Resource Include="Resources\Motion\Search\motion_embarrassed_search.png" />
+    <Resource Include="Resources\Motion\Search\motion_glare_search.png" />
+    <Resource Include="Resources\Motion\Search\motion_help_search.png" />
+    <Resource Include="Resources\Motion\Search\motion_hunger_search.png" />
+    <Resource Include="Resources\Motion\Search\motion_kiss_search.png" />
+    <Resource Include="Resources\Motion\Search\motion_laugh_search.png" />
+    <Resource Include="Resources\Motion\Search\motion_love_search.png" />
+    <Resource Include="Resources\Motion\Search\motion_mad_search.png" />
+    <Resource Include="Resources\Motion\Search\motion_oh_search.png" />
+    <Resource Include="Resources\Motion\Search\motion_ouch_search.png" />
+    <Resource Include="Resources\Motion\Search\motion_rich_search.png" />
+    <Resource Include="Resources\Motion\Search\motion_ridicule_search.png" />
+    <Resource Include="Resources\Motion\Search\motion_sad_search.png" />
+    <Resource Include="Resources\Motion\Search\motion_sigh_search.png" />
+    <Resource Include="Resources\Motion\Search\motion_sleepy_search.png" />
+    <Resource Include="Resources\Motion\Search\motion_sneer_search.png" />
+    <Resource Include="Resources\Motion\Search\motion_sparkle_search.png" />
+    <Resource Include="Resources\Motion\Search\motion_surprise_search.png" />
+    <Resource Include="Resources\Motion\Search\motion_sweat_search.png" />
+    <Resource Include="Resources\Motion\Search\motion_tongue_search.png" />
+    <Resource Include="Resources\Motion\Search\motion_wink_search.png" />
+    <Resource Include="Resources\Motion\Search\motion_yummy_search.png" />
+    <Resource Include="Resources\MPText.png" />
+    <Resource Include="Resources\Questionmark.svg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="AppSettings\Settings.Designer.cs">
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Update="AppViews\CustomGlobalHotkeyItemView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="AppWindows\FSBotWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="AppSettings\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Update="AppViews\CustomGlobalHotkeyItemView.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="AppWindows\FSBotWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <Generator>PublicResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Resources\SelectedArrow\TopRight\" />
+  </ItemGroup>
+
+</Project>

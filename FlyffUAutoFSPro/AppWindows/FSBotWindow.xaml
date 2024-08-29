@@ -1,0 +1,1012 @@
+﻿<Window x:Class="FlyffUAutoFSPro.FSBotWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        xmlns:p = "clr-namespace:FlyffUAutoFSPro.Properties"
+        xmlns:uitools="clr-namespace:FlyffUAutoFSPro._Script.UI"
+        xmlns:svgc="http://sharpvectors.codeplex.com/svgc/"
+        xmlns:fa="http://schemas.fontawesome.io/icons/" 
+        xmlns:appviews="clr-namespace:FlyffUAutoFSPro.AppViews"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib" xmlns:_script="clr-namespace:FlyffUAutoFSPro._Script"
+        SizeToContent="Height" Width="1423" FontFamily="Segoe UI Historic" Icon="../Resources/icon.ico" Height="1611">
+
+    <Grid>
+
+        <Grid x:Name="LoadingOverview" Visibility="Collapsed" Panel.ZIndex="100"  Background="#CC191919">
+            <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <DockPanel>
+                    <fa:ImageAwesome Icon="CircleOutlineNotch" Spin="True" Width="40" SpinDuration="1" Foreground="White" />
+                </DockPanel>
+                <Separator Opacity="0" Height="2"/>
+                <DockPanel>
+                    <TextBlock x:Name="LoadingOverviewText" Foreground="White" ></TextBlock>
+                </DockPanel>
+            </StackPanel>
+        </Grid>
+
+
+        <Grid HorizontalAlignment="Stretch">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="270" />
+            </Grid.ColumnDefinitions>
+
+            <Grid HorizontalAlignment="Stretch" Grid.Row="0" Grid.Column="0" x:Name="GameViewBrowser">
+                <DockPanel Panel.ZIndex="1000">
+                    <StackPanel x:Name="SnackBarView">
+                    </StackPanel>
+                </DockPanel>
+            </Grid>
+
+            <Grid Grid.Row="0" Grid.Column="1" x:Name="GameControllView" Background="#FFE8E8E8" HorizontalAlignment="Right">
+
+                <TabControl Height="auto" TabStripPlacement="Left">
+
+                    <TabControl.Resources>
+                        <Style TargetType="{x:Type TabItem}">
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="TabItem">
+                                        <Border Name="Border" BorderThickness="1,1,0,1" Background="Transparent" BorderBrush="#FF989797" Margin="0 2 0 0">
+                                            <ContentPresenter x:Name="ContentSite"
+                                        VerticalAlignment="Center"
+                                        HorizontalAlignment="Center"
+                                        ContentSource="Header"
+                                        Margin="6 10 6 10"/>
+                                        </Border>
+                                        <ControlTemplate.Triggers>
+                                            <Trigger Property="IsSelected" Value="True">
+                                                <Setter TargetName="Border" Property="Background" Value="#FFC5C5C5" />
+                                            </Trigger>
+                                        </ControlTemplate.Triggers>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                            <Setter Property="HeaderTemplate">
+                                <Setter.Value>
+                                    <DataTemplate>
+                                        <ContentPresenter Content="{TemplateBinding Content}">
+                                            <ContentPresenter.LayoutTransform>
+                                                <RotateTransform Angle="-90"/>
+                                            </ContentPresenter.LayoutTransform>
+                                        </ContentPresenter>
+                                    </DataTemplate>
+                                </Setter.Value>
+
+                            </Setter>
+                        </Style>
+                    </TabControl.Resources>
+
+
+                    <TabItem Header="{x:Static p:Resources.bot}" MinHeight="80">
+
+                        <Grid Background="#FFE5E5E5">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="428*"/>
+                                <RowDefinition Height="981*"/>
+                                <RowDefinition Height="180"/>
+                            </Grid.RowDefinitions>
+
+                            <ScrollViewer Grid.Row="0" Grid.Column="0" VerticalAlignment="Top" VerticalScrollBarVisibility="Auto" Margin="0,0,3,0" Grid.RowSpan="2">
+                                <ScrollViewer.Resources>
+                                    <sys:Double x:Key="{x:Static SystemParameters.VerticalScrollBarWidthKey}">5</sys:Double>
+                                </ScrollViewer.Resources>
+                                <StackPanel >
+                                    <GroupBox Header="{x:Static p:Resources.mystatus}" Width="230">
+
+                                        <StackPanel>
+                                            <Separator Opacity="0" Height="1"/>
+
+                                            <DockPanel>
+                                                <StackPanel Orientation="Horizontal">
+                                                    <Label Content="HP:" Width="34" Height="15" Padding="0" FontSize="10" VerticalContentAlignment="Center" />
+                                                    <Grid Width="165" Height="15">
+                                                        <ProgressBar Name="SelfHPProgressBar" Value="0" SmallChange="1" Foreground="#FFCC1E46" Background="#FF131313" BorderBrush="Black" />
+                                                        <TextBlock Text="{Binding ElementName=SelfHPProgressBar, Path=Value, StringFormat={}{0:0}%}" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White" />
+                                                    </Grid>
+                                                </StackPanel>
+                                            </DockPanel>
+
+                                            <Separator Opacity="0" Height="1"/>
+
+                                            <DockPanel>
+                                                <StackPanel Orientation="Horizontal">
+                                                    <Label Content="MP:" Width="34" Height="15" Padding="0" FontSize="10" VerticalContentAlignment="Center" />
+                                                    <Grid Width="165" Height="15">
+                                                        <ProgressBar Name="SelfMPProgressBar" Value="0" SmallChange="1" Foreground="#FF2686D9" Background="#FF131313" BorderBrush="Black" />
+                                                        <TextBlock Text="{Binding ElementName=SelfMPProgressBar, Path=Value, StringFormat={}{0:0}%}" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White" />
+                                                    </Grid>
+                                                </StackPanel>
+                                            </DockPanel>
+
+                                            <Separator Opacity="0" Height="1"/>
+
+                                            <Label Content="{x:Static p:Resources.settings}" Height="14" VerticalContentAlignment="Center" Padding="0" FontSize="10" FontWeight="Normal" />
+
+                                            <Separator Opacity="0" Height="1"/>
+                                            <Separator Opacity="0.2" Height="1"/>
+                                            <Separator Opacity="0" Height="1"/>
+
+                                            <DockPanel>
+                                                <Grid>
+                                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                                                        <Label Content="{x:Static p:Resources.hppotion}" HorizontalAlignment="Center" VerticalAlignment="Top" Width="69" Height="22" Padding="0" FontSize="10" VerticalContentAlignment="Center" />
+                                                        <Button ToolTip="" x:Name="HpPotActionButton" HorizontalAlignment="Left" Width="130" />
+                                                    </StackPanel>
+                                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                                                        <svgc:SvgViewbox Source="/Resources/Questionmark.svg" uitools:ToolTip.ToolTipHeader="{x:Static p:Resources.hppotion}" uitools:ToolTip.ToolTipText="{x:Static p:Resources.hppotion_tooltip}" MouseDown="ShowMessageBox" Height="10" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,5,0"/>
+                                                    </StackPanel>
+                                                </Grid>
+                                            </DockPanel>
+                                            <DockPanel x:Name="UseHPPotionView">
+                                                <Grid>
+                                                    <StackPanel>
+                                                        <Label Content="{x:Static p:Resources.usehppotion}" Height="14" VerticalContentAlignment="Center" Padding="0" FontSize="10"/>
+                                                        <Grid>
+                                                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                                                                <ComboBox x:Name="UseHPPotionValueSelection" VerticalAlignment="Center" Width="199" />
+                                                            </StackPanel>
+                                                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                                                                <svgc:SvgViewbox Source="/Resources/Questionmark.svg" uitools:ToolTip.ToolTipHeader="{x:Static p:Resources.hppotion}" uitools:ToolTip.ToolTipText="{x:Static p:Resources.usehppotion_tooltip}" MouseDown="ShowMessageBox" Height="10" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,5,0"/>
+                                                            </StackPanel>
+                                                        </Grid>
+                                                    </StackPanel>
+                                                </Grid>
+                                            </DockPanel>
+                                            <Separator Opacity="0" Height="1"/>
+                                            <DockPanel>
+                                                <Grid>
+                                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                                                        <CheckBox x:Name="SelfHealProtectionCheckbox" Content="{x:Static p:Resources.selfhealprotection}" HorizontalAlignment="Left" VerticalAlignment="Center" Width="150"/>
+                                                    </StackPanel>
+                                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                                                        <svgc:SvgViewbox Source="/Resources/Questionmark.svg" uitools:ToolTip.ToolTipHeader="{x:Static p:Resources.selfhealprotection}" uitools:ToolTip.ToolTipText="{x:Static p:Resources.selfhealprotection_tooltipp}" MouseDown="ShowMessageBox" HorizontalAlignment="Center" VerticalAlignment="Center" Height="10" Margin="0,0,5,0"/>
+                                                    </StackPanel>
+                                                </Grid>
+                                            </DockPanel>
+
+                                            <Separator Opacity="0" Height="1"/>
+                                            <DockPanel x:Name="SelfHealProtectionValueView">
+                                                <Grid>
+                                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                                                        <Label Content="HP:" HorizontalAlignment="Center" VerticalAlignment="Top" Width="69" Height="22" Padding="0" FontSize="10" VerticalContentAlignment="Center" />
+                                                        <ComboBox x:Name="SelfHealProtectionValueSelection" HorizontalAlignment="Left" VerticalAlignment="Center" Width="130" />
+                                                    </StackPanel>
+                                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                                                        <svgc:SvgViewbox Source="/Resources/Questionmark.svg" uitools:ToolTip.ToolTipHeader="{x:Static p:Resources.selfhealprotection}" uitools:ToolTip.ToolTipText="{x:Static p:Resources.selfhealprotection_value_tooltip}" MouseDown="ShowMessageBox" HorizontalAlignment="Center" VerticalAlignment="Center" Height="10" Margin="0,0,5,0"/>
+                                                    </StackPanel>
+                                                </Grid>
+                                            </DockPanel>
+
+                                            <Separator Opacity="0" Height="1"/>
+                                            <Separator Opacity="0.2" Height="1"/>
+                                            <Separator Opacity="0" Height="1"/>
+
+                                            <DockPanel>
+                                                <Grid>
+                                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                                                        <Label Content="{x:Static p:Resources.mppotion}" HorizontalAlignment="Center" VerticalAlignment="Top" Width="69" Height="22" Padding="0" FontSize="10" VerticalContentAlignment="Center" />
+                                                        <Button x:Name="MpPotActionButton" HorizontalAlignment="Left" Width="130" />
+                                                    </StackPanel>
+                                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                                                        <svgc:SvgViewbox Source="/Resources/Questionmark.svg" uitools:ToolTip.ToolTipHeader="{x:Static p:Resources.mppotion}" uitools:ToolTip.ToolTipText="{x:Static p:Resources.mppotion_tooltip}" MouseDown="ShowMessageBox" Height="10" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,5,0"/>
+                                                    </StackPanel>
+                                                </Grid>
+                                            </DockPanel>
+                                            <DockPanel x:Name="UseMPPotionView">
+                                                <Grid>
+                                                    <StackPanel>
+                                                        <Label Content="{x:Static p:Resources.usemppotion}" Height="14" VerticalContentAlignment="Center" Padding="0" FontSize="10"/>
+                                                        <Grid>
+                                                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                                                                <ComboBox x:Name="UseMPPotionValueSelection" VerticalAlignment="Center" Width="199" />
+                                                            </StackPanel>
+                                                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                                                                <svgc:SvgViewbox Source="/Resources/Questionmark.svg" uitools:ToolTip.ToolTipHeader="{x:Static p:Resources.mppotion}" uitools:ToolTip.ToolTipText="{x:Static p:Resources.usemppotion_tooltip}" MouseDown="ShowMessageBox" Height="10" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,5,0"/>
+                                                            </StackPanel>
+                                                        </Grid>
+                                                    </StackPanel>
+                                                </Grid>
+                                            </DockPanel>
+
+                                            <Separator Opacity="0" Height="2"/>
+                                            <Separator Opacity="100" Height="1"/>
+                                            <Separator Opacity="0" Height="2"/>
+
+
+
+                                        </StackPanel>
+                                    </GroupBox>
+
+                                    <GroupBox Header="{x:Static p:Resources.selectedplayer}" Width="230">
+
+                                        <StackPanel>
+                                            <Separator Opacity="0" Height="1"/>
+                                            <DockPanel>
+                                                <StackPanel Orientation="Horizontal">
+                                                    <Label Content="HP:" Width="34" Height="15" Padding="0" FontSize="10" VerticalContentAlignment="Center" />
+                                                    <Grid Width="165" Height="15">
+                                                        <ProgressBar Name="SelectedPlayerHPProgressBar" Value="0" SmallChange="1" Background="#FF131313" BorderBrush="Black" />
+                                                        <TextBlock Text="{Binding ElementName=SelectedPlayerHPProgressBar, Path=Value, StringFormat={}{0:0}%}" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White" />
+                                                    </Grid>
+                                                </StackPanel>
+                                            </DockPanel>
+                                            <Separator Opacity="0" Height="1"/>
+
+                                            <DockPanel x:Name="MainDistanceView">
+                                                <Grid>
+                                                    <StackPanel Orientation="Vertical" >
+                                                        <Label Content="{x:Static p:Resources.distance}" Height="14" VerticalContentAlignment="Center" Padding="0" FontSize="10" FontWeight="Bold"/>
+                                                        <Button x:Name="MainDistanceStatus" Content="OK" HorizontalAlignment="Left" Foreground="White" Width="199"/>
+                                                    </StackPanel>
+
+                                                </Grid>
+                                            </DockPanel>
+
+                                            <DockPanel>
+                                                <Grid>
+                                                    <StackPanel>
+                                                        <Label Content="{x:Static p:Resources.normalhealing}" Height="14" VerticalContentAlignment="Center" Padding="0" FontSize="10" FontWeight="Bold" Foreground="#FFFF9800" />
+                                                        <Grid>
+                                                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                                                                <ComboBox x:Name="NormalHealingSelection" VerticalAlignment="Center" Width="199" />
+                                                            </StackPanel>
+                                                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                                                                <svgc:SvgViewbox Source="/Resources/Questionmark.svg" uitools:ToolTip.ToolTipHeader="{x:Static p:Resources.healing}" uitools:ToolTip.ToolTipText="{x:Static p:Resources.normalhealing_tooltip}" MouseDown="ShowMessageBox" Height="10" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,5,0"/>
+                                                            </StackPanel>
+                                                        </Grid>
+                                                    </StackPanel>
+                                                </Grid>
+                                            </DockPanel>
+                                            <DockPanel>
+                                                <Grid>
+                                                    <StackPanel>
+                                                        <Label Content="{x:Static p:Resources.criticalhealing}" Height="14" VerticalContentAlignment="Center" Padding="0" FontSize="10" FontWeight="Bold" Foreground="#FFCC1E46" />
+                                                        <Grid>
+                                                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                                                                <ComboBox x:Name="CriticalHealingSelection" VerticalAlignment="Center" Width="199" />
+                                                            </StackPanel>
+                                                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                                                                <svgc:SvgViewbox Source="/Resources/Questionmark.svg" uitools:ToolTip.ToolTipHeader="{x:Static p:Resources.fppotion}" uitools:ToolTip.ToolTipText="{x:Static p:Resources.criticalhealing_tooltip}" MouseDown="ShowMessageBox" Height="10" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,5,0"/>
+                                                            </StackPanel>
+                                                        </Grid>
+                                                    </StackPanel>
+                                                </Grid>
+                                            </DockPanel>
+                                            <Separator Opacity="0" Height="1"/>
+                                        </StackPanel>
+
+                                    </GroupBox>
+
+                                    <GroupBox x:Name="GTAutoRebuffView" Header="{x:Static p:Resources.gtautorebuff}" Width="230">
+                                        <StackPanel>
+                                            <Separator Opacity="0" Height="1"/>
+                                            <DockPanel>
+                                                <StackPanel Orientation="Horizontal">
+                                                    <Grid Width="218" Height="15" VerticalAlignment="Center">
+                                                        <ProgressBar Name="GTAutoRebuffTimerProgressBar" Value="0" SmallChange="1" Foreground="#FF1791F7" Background="#FF131313" BorderBrush="Black" />
+                                                        <TextBlock Text="{Binding ElementName=GTAutoRebuffTimerProgressBar, Path=Value, StringFormat={}{0:0}s}" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White" />
+                                                    </Grid>
+                                                </StackPanel>
+                                            </DockPanel>
+                                            <Separator Opacity="0" Height="1"/>
+                                            <DockPanel>
+                                                <Button Style="{DynamicResource ButtonHoverStyle}" uitools:TextBlock.CharacterCasing="Upper" Content="{x:Static p:Resources.rebuffgt}" VerticalAlignment="Center" Height="25" Background="#FF1791F7" Foreground="White" Click="RebuffGTButtonClick" FontSize="10"/>
+                                            </DockPanel>
+                                            <Separator Opacity="0" Height="1"/>
+                                        </StackPanel>
+                                    </GroupBox>
+
+                                    <GroupBox Header="{x:Static p:Resources.rebuff}" Width="230">
+
+                                        <StackPanel>
+                                            <Separator Opacity="0" Height="1"/>
+                                            <DockPanel>
+                                                <Grid>
+                                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                                                        <CheckBox x:Name="EmojiAutoRebuffDetectionCheckbox" Content="{x:Static p:Resources.motionrebuff}" HorizontalAlignment="Left" VerticalAlignment="Center" Width="150"/>
+                                                    </StackPanel>
+                                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                                                        <svgc:SvgViewbox Source="/Resources/Questionmark.svg" uitools:ToolTip.ToolTipHeader="{x:Static p:Resources.motionrebuff}" uitools:ToolTip.ToolTipText="{x:Static p:Resources.motionrebuff_tooltip}" MouseDown="ShowMessageBox" HorizontalAlignment="Center" VerticalAlignment="Center" Height="10" Margin="0,0,5,0"/>
+                                                    </StackPanel>
+                                                </Grid>
+                                            </DockPanel>
+
+                                            <Separator Opacity="0" Height="1"/>
+
+                                            <DockPanel x:Name="EmojiAutoRebuffView">
+                                                <Grid>
+                                                    <ComboBox xmlns:sys="clr-namespace:System;assembly=mscorlib" x:Name="EmojiAutoRebuffDetectionSelection" HorizontalContentAlignment="Center">
+                                                        <ComboBox.Resources>
+                                                            <sys:Double x:Key="{x:Static SystemParameters.VerticalScrollBarWidthKey}">0</sys:Double>
+                                                        </ComboBox.Resources>
+                                                        <ComboBox.ItemContainerStyle>
+                                                            <Style TargetType="ComboBoxItem">
+                                                                <Style.Triggers>
+                                                                    <DataTrigger Binding="{Binding Visibility, RelativeSource={RelativeSource AncestorType=ComboBox}}" Value="Visible">
+                                                                        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                                                                    </DataTrigger>
+                                                                </Style.Triggers>
+                                                            </Style>
+                                                        </ComboBox.ItemContainerStyle>
+                                                        <ComboBox.ItemTemplate>
+                                                            <DataTemplate>
+                                                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                                                    <Image Height="30" RenderOptions.BitmapScalingMode="NearestNeighbor" Source="{ Binding ImageSource}"  ToolTip="{Binding Name}"></Image>
+                                                                </StackPanel>
+                                                            </DataTemplate>
+                                                        </ComboBox.ItemTemplate>
+                                                    </ComboBox>
+                                                </Grid>
+                                            </DockPanel>
+                                            <Separator Opacity="0" Height="1"/>
+                                            <DockPanel>
+                                                <Button Style="{DynamicResource ButtonHoverStyle}" uitools:TextBlock.CharacterCasing="Upper" Content="{x:Static p:Resources.rebuff}" VerticalAlignment="Center" Height="25" Foreground="White" Background="#FFFDAA17" Click="RebuffButtonClick" FontSize="10">
+                                                </Button>
+                                            </DockPanel>
+                                            <Separator Opacity="0" Height="1"/>
+                                        </StackPanel>
+
+                                    </GroupBox>
+                                </StackPanel>
+                            </ScrollViewer>
+
+                            <StackPanel Grid.Row="2" Grid.Column="0" Orientation="Vertical" VerticalAlignment="Center" Margin="0,0,3,0">
+                                <Separator Opacity="1" Height="1"/>
+                                <Separator Opacity="0" Height="3"/>
+                                <DockPanel>
+                                    <Grid>
+                                        <StackPanel>
+
+                                            <DockPanel>
+                                                <StackPanel Height="30">
+                                                    <Button Style="{DynamicResource ButtonHoverStyle}" uitools:TextBlock.CharacterCasing="Upper" Height="30" Background="#FF5865F2" Foreground="White" Content="{x:Static p:Resources.joindiscord}" Click="JoinDiscordButton_Click" FontSize="10">
+                                                    </Button>
+                                                </StackPanel>
+                                            </DockPanel>
+                                            <Separator Opacity="0" Height="3"/>
+                                            <DockPanel x:Name="donateView">
+                                                <StackPanel Height="50">
+                                                    <Button Style="{DynamicResource ButtonHoverStyle}" Height="50" uitools:TextBlock.CharacterCasing="Upper" Background="#FFFFD140" Foreground="#FF003087" Content="{x:Static p:Resources.donate}" Click="Donate_Click" FontSize="18" FontWeight="Bold"/>
+                                                </StackPanel>
+                                            </DockPanel>
+                                            <Separator Opacity="0" Height="3"/>
+                                            <Button Style="{DynamicResource ButtonHoverStyle}" x:Name="StartStopButton" Content="" Height="60" Click="StartStopButton_Click" />
+                                            <Label x:Name="VersionsLabel" Height="14" VerticalContentAlignment="Center" Padding="0" FontSize="10" Foreground="#FF7B7B7B" />
+                                        </StackPanel>
+                                    </Grid>
+                                </DockPanel>
+                            </StackPanel>
+                        </Grid>
+
+                    </TabItem>
+
+                    <TabItem Header="{x:Static p:Resources.globalhotkeys}" MinHeight="80">
+                        <Grid Background="#FFE5E5E5">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <ScrollViewer Grid.Row="0" Grid.Column="0" VerticalAlignment="Top" VerticalScrollBarVisibility="Auto">
+                                <ScrollViewer.Resources>
+                                    <sys:Double x:Key="{x:Static SystemParameters.VerticalScrollBarWidthKey}">5</sys:Double>
+                                </ScrollViewer.Resources>
+                                <StackPanel >
+                                    <Separator Opacity="0" Height="1"/>
+                                    <StackPanel>
+                                        <Grid>
+                                            <svgc:SvgViewbox Source="/Resources/Questionmark.svg" uitools:ToolTip.ToolTipHeader="{x:Static p:Resources.mirror}" uitools:ToolTip.ToolTipText="{x:Static p:Resources.mirror_tooltip}" MouseDown="ShowMessageBox" Height="10" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0 0 5 0"/>
+                                        </Grid>
+                                    </StackPanel>
+                                    <GroupBox Header="{x:Static p:Resources.bot}" Width="230">
+                                        <StackPanel>
+                                            <DockPanel>
+                                                <Grid>
+                                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                                                        <Label Content="{x:Static p:Resources.rebuff}" ContentStringFormat=" {0}:" VerticalContentAlignment="Center" Width="100" Height="22" Padding="0" FontSize="10" />
+                                                        <Button  x:Name="GlobalSkillRebuffActionButton" Width="110"/>
+                                                    </StackPanel>
+                                                </Grid>
+
+                                            </DockPanel>
+                                            <Separator Opacity="0" Height="1"/>
+                                            <DockPanel>
+                                                <Grid>
+                                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                                                        <Label Content="Geburah Tiphreth" ContentStringFormat=" {0}:" VerticalContentAlignment="Center" Width="100" Height="22" Padding="0" FontSize="10" />
+                                                        <Button  x:Name="GlobalSkillGeburahTiphrethActionButton" Width="110"/>
+                                                    </StackPanel>
+                                                </Grid>
+                                            </DockPanel>
+
+                                            <Separator Opacity="0" Height="1"/>
+                                            <DockPanel>
+                                                <Grid>
+                                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                                                        <Label Content="Holy Guard" ContentStringFormat=" {0}:" VerticalContentAlignment="Center" Width="100" Height="22" Padding="0" FontSize="10" />
+                                                        <Button  x:Name="GlobalSkillHolyGuardActionButton" Width="110"/>
+                                                    </StackPanel>
+                                                </Grid>
+                                            </DockPanel>
+                                        </StackPanel>
+                                    </GroupBox>
+
+                                    <GroupBox Header="{x:Static p:Resources.custom}" Width="230">
+                                        <StackPanel>
+                                            <Separator Opacity="0" Height="1"/>
+                                            <DockPanel>
+                                                <Button uitools:TextBlock.CharacterCasing="Upper" Content="{x:Static p:Resources.addcustomhotkey}" VerticalAlignment="Center" Height="25" Background="#FF1791F7" Foreground="White" FontSize="10" Click="AddGlobalHotkeyClick"/>
+                                            </DockPanel>
+                                            <Separator Opacity="0" Height="5"/>
+                                            <StackPanel x:Name="CustomHotkeysScrollerContent">
+
+                                            </StackPanel>
+                                        </StackPanel>
+                                    </GroupBox>
+
+                                </StackPanel>
+                            </ScrollViewer>
+                        </Grid>
+                    </TabItem>
+
+                    <TabItem Header="{x:Static p:Resources.skills}" MinHeight="80">
+                        <Grid Background="#FFE5E5E5">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <ScrollViewer Grid.Row="0" Grid.Column="0" VerticalAlignment="Top" VerticalScrollBarVisibility="Auto">
+                                <ScrollViewer.Resources>
+                                    <sys:Double x:Key="{x:Static SystemParameters.VerticalScrollBarWidthKey}">5</sys:Double>
+                                </ScrollViewer.Resources>
+                                <StackPanel Grid.RowSpan="2" >
+                                    <GroupBox Header="{x:Static p:Resources.skills}" Width="230">
+
+                                        <StackPanel>
+
+                                            <DockPanel>
+                                                <Grid>
+                                                    <StackPanel>
+                                                        <Label Content="{x:Static p:Resources.heal_healrain}" Height="14" VerticalContentAlignment="Center" Padding="0" FontSize="10"/>
+                                                        <Grid>
+                                                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                                                                <ComboBox x:Name="HealVariantButtonSelection" VerticalAlignment="Center" Width="199" />
+                                                            </StackPanel>
+                                                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                                                                <svgc:SvgViewbox Source="/Resources/Questionmark.svg" uitools:ToolTip.ToolTipHeader="{x:Static p:Resources.heal_healrain}" uitools:ToolTip.ToolTipText="{x:Static p:Resources.heal_healrain_tooltip}" MouseDown="ShowMessageBox" Height="10" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,5,0"/>
+                                                            </StackPanel>
+                                                        </Grid>
+                                                    </StackPanel>
+                                                </Grid>
+                                            </DockPanel>
+                                            <Separator Opacity="0" Height="1"/>
+
+                                            <DockPanel x:Name="HealVariantSelectionView_Heal">
+                                                <Grid>
+                                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                                                        <Label Content="Heal:" VerticalContentAlignment="Center" Width="100" Height="22" Padding="0" FontSize="10" />
+                                                        <Button  x:Name="HealActionButton" Width="110"/>
+                                                    </StackPanel>
+                                                </Grid>
+                                            </DockPanel>
+
+
+                                            <DockPanel x:Name="HealVariantSelectionView_HealRain">
+                                                <Grid>
+                                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                                                        <Label Content="Heal Rain:" VerticalContentAlignment="Center" Width="100" Height="22" Padding="0" FontSize="10" />
+                                                        <Button  x:Name="HealRainActionButton" Width="110"/>
+                                                    </StackPanel>
+                                                </Grid>
+                                            </DockPanel>
+
+                                            <Separator Opacity="0" Height="1"/>
+                                            <Separator Opacity="0.2" Height="1"/>
+                                            <Separator Opacity="0" Height="1"/>
+
+                                            <DockPanel>
+                                                <Grid>
+                                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                                                        <Label Content="Patience:" VerticalContentAlignment="Center" Width="100" Height="22" Padding="0" FontSize="10" />
+                                                        <Button  x:Name="PatienceActionButton" Width="110"/>
+                                                    </StackPanel>
+                                                </Grid>
+                                            </DockPanel>
+                                            <Separator Opacity="0" Height="1"/>
+
+                                            <DockPanel>
+                                                <Grid>
+                                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                                                        <Label Content="Resurrection:" VerticalContentAlignment="Center" Width="100" Height="22" Padding="0" FontSize="10" />
+                                                        <Button  x:Name="ResurrectionActionButton" Width="110"/>
+                                                    </StackPanel>
+                                                </Grid>
+                                            </DockPanel>
+                                            <Separator Opacity="0" Height="1"/>
+
+                                            <DockPanel>
+                                                <Grid>
+                                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                                                        <Label Content="Quick Step:" VerticalContentAlignment="Center" Width="100" Height="22" Padding="0" FontSize="10" />
+                                                        <Button  x:Name="QuickstepActionButton" Width="110"/>
+                                                    </StackPanel>
+                                                </Grid>
+                                            </DockPanel>
+                                            <Separator Opacity="0" Height="1"/>
+                                            <DockPanel>
+                                                <Grid>
+                                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                                                        <Label Content="Mental SIgn:" VerticalContentAlignment="Center" Width="100" Height="22" Padding="0" FontSize="10" />
+                                                        <Button x:Name="MentalsignActionButton" Width="110"/>
+                                                    </StackPanel>
+                                                </Grid>
+                                            </DockPanel>
+                                            <Separator Opacity="0" Height="1"/>
+                                            <DockPanel>
+                                                <Grid>
+                                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                                                        <Label Content="Haste:" VerticalContentAlignment="Center" Width="100" Height="22" Padding="0" FontSize="10" />
+                                                        <Button  x:Name="HasteActionButton" Width="110"/>
+                                                    </StackPanel>
+                                                </Grid>
+                                            </DockPanel>
+                                            <Separator Opacity="0" Height="1"/>
+                                            <DockPanel>
+                                                <Grid>
+                                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                                                        <Label Content="Heap Up:" VerticalContentAlignment="Center" Width="100" Height="22" Padding="0" FontSize="10" />
+                                                        <Button  x:Name="HeapActionButton" Width="110"/>
+                                                    </StackPanel>
+                                                </Grid>
+                                            </DockPanel>
+                                            <Separator Opacity="0" Height="1"/>
+                                            <DockPanel>
+                                                <Grid>
+                                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                                                        <Label Content="Cats:" VerticalContentAlignment="Center" Width="100" Height="22" Padding="0" FontSize="10" />
+                                                        <Button  x:Name="CatsReflexionActionButton" Width="110"/>
+                                                    </StackPanel>
+                                                </Grid>
+                                            </DockPanel>
+                                            <Separator Opacity="0" Height="1"/>
+                                            <DockPanel>
+                                                <Grid>
+                                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                                                        <Label Content="Beef Up:" VerticalContentAlignment="Center" Width="100" Height="22" Padding="0" FontSize="10" />
+                                                        <Button  x:Name="BeefActionButton" Width="110"/>
+                                                    </StackPanel>
+                                                </Grid>
+                                            </DockPanel>
+                                            <Separator Opacity="0" Height="1"/>
+                                            <DockPanel>
+                                                <Grid>
+                                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                                                        <Label Content="Cannenball:" VerticalContentAlignment="Center" Width="100" Height="22" Padding="0" FontSize="10" />
+                                                        <Button  x:Name="CannenballActionButton" Width="110"/>
+                                                    </StackPanel>
+                                                </Grid>
+                                            </DockPanel>
+                                            <Separator Opacity="0" Height="1"/>
+                                            <DockPanel>
+                                                <Grid>
+                                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                                                        <Label Content="Accuracy:" VerticalContentAlignment="Center" Width="100" Height="22" Padding="0" FontSize="10" />
+                                                        <Button  x:Name="AccuracyActionButton" Width="110"/>
+                                                    </StackPanel>
+                                                </Grid>
+                                            </DockPanel>
+                                            <Separator Opacity="0" Height="1"/>
+                                            <DockPanel>
+                                                <Grid>
+                                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                                                        <Label Content="Protect:" VerticalContentAlignment="Center" Width="100" Height="22" Padding="0" FontSize="10" />
+                                                        <Button  x:Name="ProtectActionButton" Width="110"/>
+                                                    </StackPanel>
+                                                </Grid>
+                                            </DockPanel>
+                                            <Separator Opacity="0" Height="1"/>
+                                            <DockPanel>
+                                                <Grid>
+                                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                                                        <Label Content="Holy Guard:" VerticalContentAlignment="Center" Width="100" Height="22" Padding="0" FontSize="10" />
+                                                        <Button  x:Name="HolyguardActionButton" Width="110"/>
+                                                    </StackPanel>
+                                                </Grid>
+                                            </DockPanel>
+                                            <Separator Opacity="0" Height="1"/>
+                                            <DockPanel>
+                                                <Grid>
+                                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                                                        <Label Content="Spiriture Fortune:" VerticalContentAlignment="Center" Width="100" Height="22" Padding="0" FontSize="10" />
+                                                        <Button  x:Name="SpiritureFortuneActionButton" Width="110"/>
+                                                    </StackPanel>
+                                                </Grid>
+                                            </DockPanel>
+                                            <Separator Opacity="0" Height="1"/>
+                                            <DockPanel>
+                                                <Grid>
+                                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                                                        <Label Content="Geburah Tiphreth:" VerticalContentAlignment="Center" Width="100" Height="22" Padding="0" FontSize="10" />
+                                                        <Button  x:Name="GeburahTiphrethActionButton" Width="110"/>
+                                                    </StackPanel>
+                                                </Grid>
+                                            </DockPanel>
+                                            <Separator Opacity="0" Height="1"/>
+
+                                            <DockPanel>
+                                                <Grid>
+                                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                                                        <CheckBox x:Name="GTAutoRebuffCheckbox" Content="{x:Static p:Resources.gtautorebuff}" HorizontalAlignment="Left" VerticalAlignment="Center" Width="150"/>
+                                                    </StackPanel>
+                                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                                                        <svgc:SvgViewbox Source="/Resources/Questionmark.svg" uitools:ToolTip.ToolTipHeader="{x:Static p:Resources.gtautorebuff}" uitools:ToolTip.ToolTipText="{x:Static p:Resources.gtautorebuff_tooltipp}" MouseDown="ShowMessageBox" HorizontalAlignment="Center" VerticalAlignment="Center" Height="10" Margin="0,0,5,0"/>
+                                                    </StackPanel>
+                                                </Grid>
+                                            </DockPanel>
+                                            <Separator Opacity="0" Height="1"/>
+                                            <DockPanel x:Name="GTAutoRebuffValueView">
+                                                <Grid>
+                                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                                                        <Label Content="Rebuff-Time:" HorizontalAlignment="Center" VerticalAlignment="Top" Width="69" Height="22" Padding="0" FontSize="10" VerticalContentAlignment="Center" />
+                                                        <ComboBox x:Name="GTAutoRebuffValueSelection" HorizontalAlignment="Left" VerticalAlignment="Center" Width="130" />
+                                                    </StackPanel>
+                                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                                                        <svgc:SvgViewbox Source="/Resources/Questionmark.svg" uitools:ToolTip.ToolTipHeader="{x:Static p:Resources.gtautorebuff}" uitools:ToolTip.ToolTipText="{x:Static p:Resources.gtautorebuff_value_tooltip}" MouseDown="ShowMessageBox" HorizontalAlignment="Center" VerticalAlignment="Center" Height="10" Margin="0,0,5,0"/>
+                                                    </StackPanel>
+                                                </Grid>
+                                            </DockPanel>
+
+                                        </StackPanel>
+
+                                    </GroupBox>
+                                </StackPanel>
+                            </ScrollViewer>
+                        </Grid>
+                    </TabItem>
+
+                    <TabItem Header="{x:Static p:Resources.settings}" MinHeight="80">
+                        <Grid Background="#FFE5E5E5">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <ScrollViewer Grid.Row="0" Grid.Column="0" VerticalAlignment="Top" VerticalScrollBarVisibility="Auto">
+                                <ScrollViewer.Resources>
+                                    <sys:Double x:Key="{x:Static SystemParameters.VerticalScrollBarWidthKey}">5</sys:Double>
+                                </ScrollViewer.Resources>
+                                <StackPanel>
+                                    <GroupBox Header="{x:Static p:Resources.hotkeys}" Width="230">
+                                        <StackPanel>
+                                            <Separator Opacity="0" Height="1"/>
+                                            <DockPanel>
+                                                <Grid>
+                                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                                                        <Label Content="{x:Static p:Resources.statusT}" VerticalAlignment="Top" Width="95" Height="22" Padding="0" FontSize="10" VerticalContentAlignment="Center" />
+                                                        <Button x:Name="TriggerStatusActionButton" Width="100" />
+                                                    </StackPanel>
+                                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                                                        <svgc:SvgViewbox Source="/Resources/Questionmark.svg" uitools:ToolTip.ToolTipHeader="{x:Static p:Resources.statusT}" uitools:ToolTip.ToolTipText="{x:Static p:Resources.statusT_tooltip}" MouseDown="ShowMessageBox" Height="10" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,5,0"/>
+                                                    </StackPanel>
+                                                </Grid>
+                                            </DockPanel>
+
+                                            <Separator Opacity="0" Height="1"/>
+
+                                            <DockPanel>
+                                                <Grid>
+                                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                                                        <Label Content="{x:Static p:Resources.followZ}" HorizontalAlignment="Center" VerticalAlignment="Top" Width="95" Height="22" Padding="0" FontSize="10" VerticalContentAlignment="Center" />
+                                                        <Button x:Name="TriggerFollowActionButton" HorizontalAlignment="Left" Width="100" />
+                                                    </StackPanel>
+                                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                                                        <svgc:SvgViewbox Source="/Resources/Questionmark.svg" uitools:ToolTip.ToolTipHeader="{x:Static p:Resources.followZ}" uitools:ToolTip.ToolTipText="{x:Static p:Resources.followZ_tooltip}" MouseDown="ShowMessageBox" Height="10" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,5,0"/>
+                                                    </StackPanel>
+                                                </Grid>
+                                            </DockPanel>
+
+                                            <Separator Opacity="0" Height="1"/>
+
+                                            <DockPanel>
+                                                <Grid>
+                                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                                                        <Label Content="{x:Static p:Resources.cleartarget}" HorizontalAlignment="Center" VerticalAlignment="Top" Width="95" Height="22" Padding="0" FontSize="10" VerticalContentAlignment="Center" />
+                                                        <Button x:Name="TriggerClearTargetActionButton" HorizontalAlignment="Left" Width="100" />
+                                                    </StackPanel>
+                                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                                                        <svgc:SvgViewbox Source="/Resources/Questionmark.svg" uitools:ToolTip.ToolTipHeader="{x:Static p:Resources.cleartarget}" uitools:ToolTip.ToolTipText="{x:Static p:Resources.cleartarget_tooltip}" MouseDown="ShowMessageBox" Height="10" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,5,0"/>
+                                                    </StackPanel>
+                                                </Grid>
+                                            </DockPanel>
+
+
+                                        </StackPanel>
+                                    </GroupBox>
+
+
+                                    <GroupBox Header="{x:Static p:Resources.captcha}" Width="230">
+
+                                        <StackPanel>
+                                            <Separator Opacity="0" Height="1"/>
+                                            <DockPanel>
+                                                <Grid>
+                                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                                                        <CheckBox x:Name="CaptchaDetectionCheckbox" Content="{x:Static p:Resources.captchadetection}" HorizontalAlignment="Left" VerticalAlignment="Center" Width="150"/>
+                                                    </StackPanel>
+                                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                                                        <svgc:SvgViewbox Source="/Resources/Questionmark.svg" uitools:ToolTip.ToolTipHeader="{x:Static p:Resources.captchadetection}" uitools:ToolTip.ToolTipText="{x:Static p:Resources.captchadetection_tooltip}" MouseDown="ShowMessageBox" HorizontalAlignment="Center" VerticalAlignment="Center" Height="10" Margin="0,0,5,0"/>
+                                                    </StackPanel>
+                                                </Grid>
+                                            </DockPanel>
+
+                                            <Separator Opacity="0" Height="1"/>
+
+                                            <DockPanel x:Name="CaptchaDetectionView">
+                                                <Grid>
+                                                    <StackPanel>
+                                                        <Label Content="{x:Static p:Resources.captchadetectionsound}" Height="14" VerticalContentAlignment="Center" Padding="0" FontSize="10"/>
+                                                        <Grid>
+                                                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                                                                <ComboBox x:Name="CaptchaDetectionSoundSelection" VerticalAlignment="Center" Width="199" />
+                                                            </StackPanel>
+                                                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                                                                <svgc:SvgViewbox Source="/Resources/Questionmark.svg" uitools:ToolTip.ToolTipHeader="{x:Static p:Resources.captchadetectionsound}" uitools:ToolTip.ToolTipText="{x:Static p:Resources.captchadetectionsound_tooltip}" MouseDown="ShowMessageBox" Height="10" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,5,0"/>
+                                                            </StackPanel>
+                                                        </Grid>
+                                                    </StackPanel>
+                                                </Grid>
+                                            </DockPanel>
+
+                                        </StackPanel>
+
+                                    </GroupBox>
+
+
+                                    <GroupBox Header="{x:Static p:Resources.follow}" Width="230">
+
+                                        <StackPanel>
+                                            <Separator Opacity="0" Height="1"/>
+                                            <DockPanel>
+                                                <Grid>
+                                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                                                        <CheckBox x:Name="AutoRefollowCheckbox" Content="{x:Static p:Resources.refollow}" HorizontalAlignment="Left" VerticalAlignment="Center" Width="150"/>
+                                                    </StackPanel>
+                                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                                                        <svgc:SvgViewbox Source="/Resources/Questionmark.svg" uitools:ToolTip.ToolTipHeader="{x:Static p:Resources.refollow}" uitools:ToolTip.ToolTipText="{x:Static p:Resources.refollow_tooltip}" MouseDown="ShowMessageBox" HorizontalAlignment="Center" VerticalAlignment="Center" Height="10" Margin="0,0,5,0"/>
+                                                    </StackPanel>
+                                                </Grid>
+                                            </DockPanel>
+
+                                            <Separator Opacity="0" Height="1"/>
+
+                                            <DockPanel x:Name="AutoRefollowTimeView">
+                                                <Grid>
+                                                    <StackPanel>
+                                                        <Label Content="{x:Static p:Resources.refollowinterval}" Height="14" VerticalContentAlignment="Center" Padding="0" FontSize="10"/>
+                                                        <Grid>
+                                                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                                                                <ComboBox x:Name="RefollowSelection" VerticalAlignment="Center" Width="199" />
+                                                            </StackPanel>
+                                                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                                                                <svgc:SvgViewbox Source="/Resources/Questionmark.svg" uitools:ToolTip.ToolTipHeader="{x:Static p:Resources.refollowinterval}" uitools:ToolTip.ToolTipText="{x:Static p:Resources.refollowinterval_tooltip}" MouseDown="ShowMessageBox" Height="10" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,5,0"/>
+                                                            </StackPanel>
+                                                        </Grid>
+                                                    </StackPanel>
+                                                </Grid>
+                                            </DockPanel>
+
+                                        </StackPanel>
+
+                                    </GroupBox>
+
+                                    <GroupBox Header="{x:Static p:Resources.pause}" Width="230">
+
+                                        <StackPanel>
+                                            <Separator Opacity="0" Height="1"/>
+                                            <DockPanel>
+                                                <Grid>
+                                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                                                        <CheckBox x:Name="StopBotOnInteractionCheckbox" Content="{x:Static p:Resources.pausebot}" HorizontalAlignment="Left" VerticalAlignment="Center" Width="150"/>
+                                                    </StackPanel>
+                                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                                                        <svgc:SvgViewbox Source="/Resources/Questionmark.svg" uitools:ToolTip.ToolTipHeader="{x:Static p:Resources.pausebot}" uitools:ToolTip.ToolTipText="{x:Static p:Resources.pausebot_tooltip}" MouseDown="ShowMessageBox" HorizontalAlignment="Center" VerticalAlignment="Center" Height="10" Margin="0,0,5,0"/>
+                                                    </StackPanel>
+                                                </Grid>
+                                            </DockPanel>
+
+                                            <Separator Opacity="0" Height="1"/>
+
+                                            <DockPanel x:Name="StopBotOnInteractionTimeView">
+                                                <Grid>
+                                                    <StackPanel>
+                                                        <Label Content="{x:Static p:Resources.pausebottime}" Height="14" VerticalContentAlignment="Center" Padding="0" FontSize="10"/>
+                                                        <Grid>
+                                                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                                                                <ComboBox x:Name="StopBotOnInteractionSelection" VerticalAlignment="Center" Width="199" />
+                                                            </StackPanel>
+                                                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                                                                <svgc:SvgViewbox Source="/Resources/Questionmark.svg" uitools:ToolTip.ToolTipHeader="{x:Static p:Resources.pausebottime}" uitools:ToolTip.ToolTipText="{x:Static p:Resources.pausebottime_tooltip}" MouseDown="ShowMessageBox" Height="10" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,5,0"/>
+                                                            </StackPanel>
+                                                        </Grid>
+                                                    </StackPanel>
+                                                </Grid>
+                                            </DockPanel>
+
+                                        </StackPanel>
+
+                                    </GroupBox>
+
+                                    <GroupBox Header="{x:Static p:Resources.buffs}" Width="230">
+
+                                        <StackPanel>
+
+                                            <Separator Opacity="0" Height="1"/>
+                                            <DockPanel>
+                                                <Grid>
+                                                    <StackPanel>
+                                                        <Label Content="{x:Static p:Resources.durationbetweenbuffs}" Height="14" VerticalContentAlignment="Center" Padding="0" FontSize="10"/>
+                                                        <Grid>
+                                                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                                                                <ComboBox x:Name="WaitDurationBetweeRebuffalbeBuffsSelection" VerticalAlignment="Center" Width="199" />
+                                                            </StackPanel>
+                                                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                                                                <svgc:SvgViewbox Source="/Resources/Questionmark.svg" uitools:ToolTip.ToolTipHeader="{x:Static p:Resources.criticalhealingduration}" uitools:ToolTip.ToolTipText="{x:Static p:Resources.criticalhealingduration_tooltip}" MouseDown="ShowMessageBox" Height="10" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,5,0"/>
+                                                            </StackPanel>
+                                                        </Grid>
+                                                    </StackPanel>
+                                                </Grid>
+                                            </DockPanel>
+
+                                            <Separator Opacity="0" Height="1"/>
+                                            <DockPanel>
+                                                <Grid>
+                                                    <StackPanel>
+                                                        <Label Content="{x:Static p:Resources.criticalhealingduration}" Height="14" VerticalContentAlignment="Center" Padding="0" FontSize="10"/>
+                                                        <Grid>
+                                                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                                                                <ComboBox x:Name="CriticalHealingDurationSelection" VerticalAlignment="Center" Width="199" />
+                                                            </StackPanel>
+                                                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                                                                <svgc:SvgViewbox Source="/Resources/Questionmark.svg" uitools:ToolTip.ToolTipHeader="{x:Static p:Resources.criticalhealingduration}" uitools:ToolTip.ToolTipText="{x:Static p:Resources.criticalhealingduration_tooltip}" MouseDown="ShowMessageBox" Height="10" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,5,0"/>
+                                                            </StackPanel>
+                                                        </Grid>
+                                                    </StackPanel>
+                                                </Grid>
+                                            </DockPanel>
+                                        </StackPanel>
+
+                                    </GroupBox>
+
+
+                                    <GroupBox Header="{x:Static p:Resources.resurrects}" Width="230">
+
+                                        <StackPanel>
+
+                                            <Separator Opacity="0" Height="1"/>
+                                            <DockPanel>
+                                                <Grid>
+                                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                                                        <CheckBox x:Name="AutoResurrectActiveCheckbox" Content="{x:Static p:Resources.autoress}" VerticalAlignment="Center" Width="199"/>
+                                                    </StackPanel>
+                                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                                                        <svgc:SvgViewbox Source="/Resources/Questionmark.svg" uitools:ToolTip.ToolTipHeader="{x:Static p:Resources.autoress}" uitools:ToolTip.ToolTipText="{x:Static p:Resources.autoress_tooltip}" MouseDown="ShowMessageBox" HorizontalAlignment="Center" VerticalAlignment="Center" Height="10" Margin="0,0,5,0"/>
+                                                    </StackPanel>
+                                                </Grid>
+                                            </DockPanel>
+
+                                            <Separator Opacity="0" Height="1"/>
+                                            <DockPanel x:Name="RebuffAfterResurrect">
+                                                <Grid>
+                                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                                                        <CheckBox x:Name="RebuffAfterResurrectActiveCheckbox" Content="{x:Static p:Resources.rebuffafterresurrection}" VerticalAlignment="Center" Width="199"/>
+                                                    </StackPanel>
+                                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                                                        <svgc:SvgViewbox Source="/Resources/Questionmark.svg" uitools:ToolTip.ToolTipHeader="{x:Static p:Resources.rebuffafterresurrection}" uitools:ToolTip.ToolTipText="{x:Static p:Resources.rebuffafterresurrection_tooltip}" MouseDown="ShowMessageBox" HorizontalAlignment="Center" VerticalAlignment="Center" Height="10" Margin="0,0,5,0"/>
+                                                    </StackPanel>
+                                                </Grid>
+                                            </DockPanel>
+
+
+
+
+
+                                        </StackPanel>
+
+                                    </GroupBox>
+
+
+                                    <GroupBox Header="{x:Static p:Resources.distance}" Width="230">
+                                        <StackPanel>
+                                            <Separator Opacity="0" Height="1"/>
+                                            <DockPanel>
+                                                <Grid>
+                                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                                                        <CheckBox x:Name="CheckDistanceCheckbox" Content="{x:Static p:Resources.checkdistance}" VerticalAlignment="Center" Width="198"/>
+                                                    </StackPanel>
+                                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                                                        <svgc:SvgViewbox Source="/Resources/Questionmark.svg" uitools:ToolTip.ToolTipHeader="{x:Static p:Resources.checkdistance}" uitools:ToolTip.ToolTipText="{x:Static p:Resources.checkdistance_tooltip}" MouseDown="ShowMessageBox" HorizontalAlignment="Center" VerticalAlignment="Center" Height="10" Margin="0,0,5,0"/>
+                                                    </StackPanel>
+                                                </Grid>
+                                            </DockPanel>
+                                        </StackPanel>
+
+                                    </GroupBox>
+
+                                    <GroupBox Header="{x:Static p:Resources.reset}" Width="230">
+                                        <StackPanel>
+                                            <Separator Opacity="0" Height="1"/>
+                                            <DockPanel x:Name="enterLicenseView2">
+                                                <Grid>
+                                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                                                        <Button  Width="199" Style="{DynamicResource ButtonHoverStyle}" uitools:TextBlock.CharacterCasing="Upper" Content="{x:Static p:Resources.reset}" VerticalAlignment="Center" Height="25" Background="#FFFF5C5C" Foreground="White" Click="ResetSettingsButton_Click" FontSize="10"/>
+                                                    </StackPanel>
+                                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                                                        <svgc:SvgViewbox Source="/Resources/Questionmark.svg" uitools:ToolTip.ToolTipHeader="{x:Static p:Resources.reset}" uitools:ToolTip.ToolTipText="{x:Static p:Resources.reset_tooltip}" MouseDown="ShowMessageBox" HorizontalAlignment="Center" VerticalAlignment="Center" Height="10" Margin="0,0,5,0"/>
+                                                    </StackPanel>
+                                                </Grid>
+                                            </DockPanel>
+
+                                            <Separator Opacity="0" Height="1"/>
+
+                                        </StackPanel>
+
+                                    </GroupBox>
+
+                                </StackPanel>
+                            </ScrollViewer>
+                        </Grid>
+                    </TabItem>
+
+
+
+                    <TabItem x:Name="DevTools" Header="DEV" MinHeight="80">
+                        <Grid Background="#FFE5E5E5">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <ScrollViewer Grid.Row="0" Grid.Column="0" VerticalAlignment="Top" VerticalScrollBarVisibility="Auto">
+                                <StackPanel>
+                                    <GroupBox Header="DEV" Width="230">
+                                        <StackPanel>
+                                            <Separator Opacity="0" Height="1"/>
+                                            <DockPanel>
+                                                <Button Content="Take Screenshot" x:Name="TakeScreenshot" Height="25" Click="TakeScreenshot_Click"/>
+                                            </DockPanel>
+                                            <Separator Opacity="0" Height="1"/>
+                                            <DockPanel>
+                                                <Button Content="Hide Names" x:Name="HideNames" Height="25" Click="HideNames_Click"/>
+                                            </DockPanel>
+                                        </StackPanel>
+                                    </GroupBox>
+
+                                </StackPanel>
+                            </ScrollViewer>
+                        </Grid>
+                    </TabItem>
+                </TabControl>
+
+            </Grid>
+
+        </Grid>
+
+    </Grid>
+
+</Window>
