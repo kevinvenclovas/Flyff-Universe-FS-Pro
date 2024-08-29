@@ -480,7 +480,7 @@ namespace FlyffUAutoFSPro
                     KeybordKeys = new List<Key>(){ Key.LeftAlt, Key.RightAlt },
                     Name = "Alt",
                     CefEventFlags = CefSharp.CefEventFlags.AltDown,
-                    GlobalHotKeyModifier = NonInvasiveKeyboardHookLibrary.ModifierKeys.Alt
+                    GlobalHotKeyModifier = _Script.NonInvasiveKeyboardHookLibrary.ModifierKeys.Alt
                 }
             },
             {
@@ -491,7 +491,7 @@ namespace FlyffUAutoFSPro
                     KeybordKeys = new List<Key>(){ Key.LeftShift, Key.RightShift },
                     Name = "Shift",
                     CefEventFlags = CefSharp.CefEventFlags.ShiftDown,
-                    GlobalHotKeyModifier = NonInvasiveKeyboardHookLibrary.ModifierKeys.Shift
+                    GlobalHotKeyModifier = _Script.NonInvasiveKeyboardHookLibrary.ModifierKeys.Shift
                 }
             },
             {
@@ -502,7 +502,7 @@ namespace FlyffUAutoFSPro
                     KeybordKeys = new List<Key>(){ Key.LeftCtrl, Key.RightCtrl },
                     Name = "Ctrl",
                     CefEventFlags = CefSharp.CefEventFlags.ControlDown,
-                    GlobalHotKeyModifier = NonInvasiveKeyboardHookLibrary.ModifierKeys.Control
+                    GlobalHotKeyModifier = _Script.NonInvasiveKeyboardHookLibrary.ModifierKeys.Control
                 }
             },
             {
@@ -684,7 +684,7 @@ namespace FlyffUAutoFSPro
 
         public static bool IsModifierKey(this Key key)
         {
-            return (GlobalValues.AvailableKeys.Select(x => x.Value).FirstOrDefault(x => x.KeybordKeys.Contains(key))?.GlobalHotKeyModifier ?? NonInvasiveKeyboardHookLibrary.ModifierKeys.WindowsKey) != NonInvasiveKeyboardHookLibrary.ModifierKeys.WindowsKey;
+            return (GlobalValues.AvailableKeys.Select(x => x.Value).FirstOrDefault(x => x.KeybordKeys.Contains(key))?.GlobalHotKeyModifier ?? _Script.NonInvasiveKeyboardHookLibrary.ModifierKeys.WindowsKey) != _Script.NonInvasiveKeyboardHookLibrary.ModifierKeys.WindowsKey;
         }
 
         public static List<ActionKey> ActionKeyIdsToActionkeys(this List<int> keys)

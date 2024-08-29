@@ -150,10 +150,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\NonInvasiveKeyboardHook\source\NonInvasiveKeyboardHook\NonInvasiveKeyboardHookLibrary\NonInvasiveKeyboardHookLibrary.Core.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
     <Resource Include="Resources\BarSwitcher.png" />
     <Resource Include="Resources\BarSwitcherGray.png" />
     <Resource Include="Resources\Close.png" />
@@ -273,6 +269,7 @@
 
   <ItemGroup>
     <Folder Include="Resources\SelectedArrow\TopRight\" />
+    <Folder Include="_Script\NewFolder\" />
   </ItemGroup>
 
 </Project>
